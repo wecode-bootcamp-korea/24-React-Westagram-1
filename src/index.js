@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route } from 'react-router-dom';
-import App from './App';
-import Routes from './Routes'
+import Routes from './Routes';
+import './styles/Reset.scss';
+import './styles/Common.scss';
 
-
-ReactDOM.render(<Routes />, document.getElementById('root')
-);
+ReactDOM.render(<Routes />, document.getElementById('root'));
