@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route } from 'react-router-dom';
 import Routes from './Routes';
 import './styles/reset.scss';
 import './styles/common.scss';
