@@ -8,48 +8,71 @@
   background-color: #fafafa;
   box-sizing: border-box;
 
-  nav {
-    position: fixed;
-    top: 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-    height: 60px;
-    padding: 0px auto;
-    background-color: #ffffff;
-    border-bottom: 2px solid #e6e6e6;
+  // nav {
+  //   position: fixed;
+  //   top: 0px;
+  //   display: flex;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   width: 100vw;
+  //   height: 60px;
+  //   padding: 0px auto;
+  //   background-color: #ffffff;
+  //   border-bottom: 2px solid #e6e6e6;
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      width: 900px;
+  //   .nav {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     width: 900px;
 
-      .navLogo {
-        display: flex;
-        align-items: center;
-        font-size: 20px;
+  //     .navLogo {
+  //       display: flex;
+  //       align-items: center;
+  //       font-size: 20px;
 
-        & div {
-          padding: 2px 15px;
-        }
+  //       & div {
+  //         padding: 2px 15px;
+  //       }
 
-        .navLogoCamera {
-          border-right: 1px solid black;
-        }
-      }
+  //       .navLogoCamera {
+  //         border-right: 1px solid black;
+  //       }
+  //     }
 
-      .navLink {
-        display: flex;
-        list-style: none;
+  //     .navLink {
+  //       display: flex;
+  //       list-style: none;
 
-        & li {
-          margin: 0px 10px;
-          font-size: 22px;
-        }
-      }
-    }
-  }
+  //       & li {
+  //         margin: 0px 10px;
+  //         font-size: 22px;
+  //       }
+  //     }
+
+  //     .navSearch {
+  //       position: relative;
+  //       display: flex;
+  //       justify-content: center;
+  //       align-items: center;
+
+  //       #navSearchInput {
+  //         width: 200px;
+  //         height: 25px;
+  //         background-color: #fafafa;
+  //         outline: none;
+
+  //         &::placeholder {
+  //           text-align: center;
+  //           color: #dbdbdb;
+  //         }
+  //       }
+
+  //       #navSearchIcon {
+  //         position: absolute;
+  //       }
+  //     }
+  //   }
+  // }
 
   main {
     display: flex;

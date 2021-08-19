@@ -5,7 +5,7 @@ class Main extends Component {
   render() {
     return (
       <div className="main">
-        <nav>
+        {/* <nav>
           <div className="nav">
             <div className="navLogo">
               <div className="navLogoCamera">
@@ -14,7 +14,12 @@ class Main extends Component {
               <div>westagram</div>
             </div>
             <div className="navSearch">
-              <input type="text" placeholder="검색" />
+              <i
+                class="fas fa-search"
+                id="
+              navSearchIcon"
+              ></i>
+              <input type="text" placeholder="검색" id="navSearchInput" />
             </div>
             <div>
               <ul className="navLink">
@@ -36,7 +41,7 @@ class Main extends Component {
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
         <main>
           <div className="article">
             <article>
