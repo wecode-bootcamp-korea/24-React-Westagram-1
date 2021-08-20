@@ -10,6 +10,7 @@ class LoginDonghee extends Component {
       pw: '',
     };
   }
+
   goToMain = () => {
     this.props.history.push('/main');
   };
@@ -30,17 +31,24 @@ class LoginDonghee extends Component {
           <form action="" method="get" class="loginBox">
             <input
               type="text"
-              class="id loginInput"
+              className="id loginInput"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={this.handleIdInput}
             />
             <input
               type="password"
-              class="password loginInput"
+              className="password loginInput"
               placeholder="비밀번호"
               onChange={this.handlePWInput}
             />
-            <button onClick={this.goToMain} class="loginBtn">
+            <button
+              onClick={this.goToMain}
+              className={
+                this.state.id.includes('@') && this.state.pw.length > 5
+                  ? 'activeBtn'
+                  : 'inactiveBtn'
+              }
+            >
               로그인
             </button>
           </form>
