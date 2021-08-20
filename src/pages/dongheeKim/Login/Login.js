@@ -12,7 +12,7 @@ class LoginDonghee extends Component {
   }
 
   goToMain = () => {
-    this.props.history.push('/main');
+    this.props.history.push('/main-dong');
   };
 
   handleIdInput = e => {
