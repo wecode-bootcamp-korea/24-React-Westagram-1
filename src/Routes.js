@@ -8,7 +8,7 @@ import LoginSeungchan from './pages/seungchanKim/Login/Login';
 import MainSeungchan from './pages/seungchanKim/Main/Main';
 import LoginSonghyun from './pages/songhyunLee/Login/Login';
 import MainSonghyun from './pages/songhyunLee/Main/Main';
-import Nav from './components/Nav/Nav'; //공용
+import Nav from './components/Nav/Nav';
 
 class Routes extends Component {
   render() {
