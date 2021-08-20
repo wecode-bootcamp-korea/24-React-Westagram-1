@@ -20,7 +20,6 @@ class LoginDonghee extends Component {
 
   handlePWInput = e => {
     this.setState({ pw: e.target.value });
-    console.log(this.state);
   };
 
   render() {
