@@ -1,47 +1,12 @@
 import React, { Component } from 'react';
 import './Main.scss';
+import Nav from '../../../components/Nav/Nav';
 
 class Main extends Component {
   render() {
     return (
       <div className="main">
-        {/* <nav>
-          <div className="nav">
-            <div className="navLogo">
-              <div className="navLogoCamera">
-                <i className="fab fa-instagram"></i>
-              </div>
-              <div>westagram</div>
-            </div>
-            <div className="navSearch">
-              <i
-                class="fas fa-search"
-                id="
-              navSearchIcon"
-              ></i>
-              <input type="text" placeholder="검색" id="navSearchInput" />
-            </div>
-            <div>
-              <ul className="navLink">
-                <li>
-                  <i className="fas fa-home"></i>
-                </li>
-                <li>
-                  <i className="fas fa-location-arrow"></i>
-                </li>
-                <li>
-                  <i className="far fa-compass"></i>
-                </li>
-                <li>
-                  <i className="far fa-heart"></i>
-                </li>
-                <li>
-                  <i className="fas fa-user-alt"></i>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav> */}
+        <Nav />
         <main>
           <div className="article">
             <article>
