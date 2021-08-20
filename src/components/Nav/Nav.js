@@ -1,3 +1,4 @@
+//공용
 import React, { Component } from 'react';
 import './Nav.scss';
 
