@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.MainDonghee {
+  div {
+    box-sizing: border-box;
+  }
+
+  font: inherit;
+  margin: 0;
+  background-color: #fafafa;
+
+  /*--- nav ---*/
+
+  // nav {
+  //   display: flex;
+  //   height: 60px;
+  //   justify-content: space-around;
+  //   align-items: center;
+  //   padding: 0 60px 0 80px;
+  //   background-color: white;
+  //   border-bottom: lightgray solid 1px;
+
+  //   .nav-logo {
+  //     display: flex;
+  //     width: 180px;
+  //     align-items: center;
+  //     justify-content: space-between;
+
+  //     .nav-logo_text {
+  //       width: 150px;
+  //       margin-left: 10px;
+  //       padding-left: 10px;
+  //       border-left: black solid 2px;
+  //       font-family: 'Lobster', cursive;
+  //       font-size: 23px;
+  //     }
+
+  //     .nav-logo_image {
+  //       width: 23px;
+  //       height: 23px;
+  //       background-size: contain;
+  //       background-repeat: no-repeat;
+  //       background-image: url('../../../assets/images/logo.png');
+  //     }
+  //   }
+
+  //   .nav-search {
+  //     position: relative;
+  //     width: 200px;
+
+  //     input {
+  //       width: 100%;
+  //       padding: 3px 0;
+  //       color: #dbdbdb;
+  //       background-color: #fafafa;
+  //       border: #dbdbdb solid 1px;
+  //       text-align: center;
+  //       font-size: 14px;
+  //     }
+
+  //     i {
+  //       position: absolute;
+  //       top: 9px;
+  //       left: 35%;
+  //       color: #8e8e8e;
+  //       font-size: 10px;
+  //     }
+
+  //     .fas {
+  //       color: red;
+  //     }
+  //   }
+
+  //   .nav-icons {
+  //     display: flex;
+  //     width: 180px;
+  //     justify-content: space-around;
+
+  //     div {
+  //       width: 23px;
+  //       height: 23px;
+  //       background-size: contain;
+  //       background-repeat: no-repeat;
+  //     }
+
+  //     .nav-icons_safari {
+  //       background-image: url('../../../assets/images/safari.png');
+  //     }
+
+  //     .nav-icons_heart {
+  //       background-image: url('../../../assets/images/heart.png');
+  //     }
+
+  //     .nav-icons_person {
+  //       background-image: url('../../../assets/images/person.png');
+  //     }
+  //   }
+  // }
+
+  /*--- main ---*/
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    /*--- feeds ---*/
+
+    .feeds {
+      width: 650px;
+      margin-right: 30px;
+
+      article {
+        display: flex;
+        width: 650px;
+        flex-direction: column;
+        margin-top: 40px;
+        background-color: white;
+        border: lightgray solid 1px;
+
+        .feeds-profile {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 10px;
+
+          .feeds-profile_account {
+            display: flex;
+            padding: 10px 0;
+            align-items: center;
+
+            .feeds-profile_account_pic {
+              margin-right: 15px;
+              background-image: url('../../dongheeKim/profile.jpg');
+              background-size: cover;
+            }
+
+            .profile_pic {
+              width: 33px;
+              height: 33px;
+              border-radius: 50%;
+              margin-right: 10px;
+              background-size: cover;
+            }
+
+            .feeds-profile_account_name .bold {
+              color: rgba(var(--f75, 38, 38, 38), 1);
+              font-weight: 600;
+              cursor: Pointer;
+            }
+          }
+          .feeds-profile_dot {
+            align-items: center;
+          }
+        }
+        .feeds-pic {
+          width: 650px;
+          height: 650px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-image: url('../../dongheeKim/cat.jpg');
+        }
+
+        .feeds-status {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 10px 20px 0 20px;
+
+          .feeds-status-icons {
+            display: flex;
+            height: 100%;
+            justify-content: flex-start;
+            align-items: center;
+
+            .miniIcon {
+              width: 25px;
+              margin-right: 15px;
+            }
+          }
+        }
+
+        .feeds-text {
+          margin-left: 20px;
+          margin-top: 5px;
+
+          .feeds-text_like {
+            margin-bottom: 10px;
+
+            .bold {
+              color: rgba(var(--f75, 38, 38, 38), 1);
+              font-weight: 600;
+              cursor: Pointer;
+              margin-bottom: 5px;
+            }
+          }
+
+          .accountName {
+            color: rgba(var(--f75, 38, 38, 38), 1);
+            font-weight: 600;
+            margin-right: 5px;
+            cursor: Pointer;
+          }
+
+          li {
+            display: flex;
+            margin-top: 5px;
+            padding-right: 20px;
+            justify-content: space-between;
+            list-style: none;
+            text-align: center;
+          }
+        }
+
+        .feeds-text_minutes {
+          margin: 5px 0 10px 20px;
+        }
+
+        .font-graysmall {
+          color: rgba(var(--edc, 199, 199, 199), 1);
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 13px;
+        }
+
+        .feeds-comment {
+          bottom: 0;
+          align-items: center;
+          padding-top: 10px;
+          border-top: lightgray solid 1px;
+
+          .feeds-comment_box {
+            width: 550px;
+            margin-left: 5px;
+            padding-left: 15px;
+            padding-bottom: 15px;
+            border: 0;
+            outline: 0;
+            font-size: 14px;
+          }
+
+          .feeds-comment_btn {
+            width: 60px;
+            margin-left: 20px;
+            color: lightskyblue;
+            background-color: white;
+            border: 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+          }
+
+          .delete {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    /*--- profile ---*/
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .myProfile {
+        display: flex;
+        width: 400px;
+        margin-top: 40px;
+        align-items: center;
+
+        .myProfile-pic {
+          width: 53px;
+          height: 53px;
+          margin-right: 20px;
+          border-radius: 50%;
+          background-size: cover;
+          background-image: url('../../dongheeKim/tweety.jpg');
+        }
+
+        .profilename {
+          display: flex;
+          flex-direction: column;
+
+          .bold {
+            color: rgba(var(--f75, 38, 38, 38), 1);
+            font-weight: 600;
+            cursor: Pointer;
+            margin-bottom: 5px;
+          }
+
+          .font-gray {
+            color: #8e8e8e;
+            font-size: 14px;
+          }
+        }
+      }
+
+      /*--- story ---*/
+
+      .story {
+        width: 400px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        background-color: white;
+        border: lightgray solid 1px;
+
+        .profile_header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 15px 8px 15px;
+
+          .font-graybold {
+            color: #8e8e8e;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          .font-gray {
+            color: #8e8e8e;
+            font-size: 14px;
+          }
+        }
+
+        .bold {
+          color: rgba(var(--f75, 38, 38, 38), 1);
+          font-weight: 600;
+          cursor: Pointer;
+        }
+
+        .story-account {
+          display: flex;
+          margin-left: 15px;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .profile_pic {
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-size: cover;
+          }
+
+          .profilename {
+            display: flex;
+            flex-direction: column;
+
+            .font-gray {
+              color: #8e8e8e;
+              font-size: 14px;
+            }
+
+            .bold {
+              color: rgba(var(--f75, 38, 38, 38), 1);
+              font-weight: 600;
+              cursor: Pointer;
+              margin-bottom: 5px;
+            }
+          }
+
+          .story_pic1 {
+            background-image: url('../../dongheeKim/wecode.jpg');
+          }
+
+          .story_pic2 {
+            background-image: url('../../dongheeKim/yk.jpg');
+          }
+
+          .story_pic3 {
+            background-image: url('../../dongheeKim/sk.jpg');
+          }
+        }
+      }
+
+      /*--- recommend ---*/
+
+      .recommend {
+        width: 400px;
+        background-color: white;
+        border: lightgray solid 1px;
+
+        .profile_header {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 15px 8px 15px;
+
+          .font-graybold {
+            color: #8e8e8e;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          .bold {
+            color: rgba(var(--f75, 38, 38, 38), 1);
+            font-weight: 600;
+            cursor: Pointer;
+            margin-bottom: 5px;
+          }
+        }
+
+        .recommend-wrap {
+          display: flex;
+          margin: 0 15px 15px 15px;
+          justify-content: space-between;
+          align-items: center;
+
+          .font-blue {
+            color: rgba(var(--d69, 0, 149, 246), 1);
+            font-weight: 600;
+            cursor: Pointer;
+          }
+
+          .recommend-account {
+            display: flex;
+
+            .profile_pic {
+              width: 33px;
+              height: 33px;
+              border-radius: 50%;
+              margin-right: 10px;
+              background-size: cover;
+            }
+
+            .profilename {
+              display: flex;
+              flex-direction: column;
+
+              .font-gray {
+                color: #8e8e8e;
+                font-size: 14px;
+              }
+
+              .bold {
+                color: rgba(var(--f75, 38, 38, 38), 1);
+                font-weight: 600;
+                cursor: Pointer;
+                margin-bottom: 5px;
+              }
+            }
+
+            .recommend-pic1 {
+              background-image: url('../../dongheeKim/byemypie.jpg');
+            }
+
+            .recommend-pic2 {
+              background-image: url('../../dongheeKim/verte.jpg');
+            }
+
+            .recommend-pic3 {
+              background-image: url('../../dongheeKim/wsh.jpg');
+            }
+          }
+        }
+      }
+
+      /*--- info ---*/
+
+      .info {
+        width: 300px;
+        height: 80px;
+        margin-bottom: 50px;
+
+        .font-graysmall {
+          color: rgba(var(--edc, 199, 199, 199), 1);
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+}

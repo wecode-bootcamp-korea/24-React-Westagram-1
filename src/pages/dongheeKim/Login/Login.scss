@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.LoginDonghee {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 320px;
+  top: 50%;
+  left: 50%;
+  margin-top: -160px;
+  margin-left: -150px;
+  border: lightgray 1px solid;
+
+  .logo {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+  }
+
+  .loginBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 205px;
+    height: 100px;
+    margin-top: -30px;
+
+    .loginInput {
+      padding: 7px 3px;
+      background-color: #fafafa;
+      border-radius: 3px;
+      border: lightgray solid 1px;
+      font-size: 11px;
+    }
+
+    .loginBtn {
+      padding: 5px 0;
+      border-radius: 3px;
+      margin-top: 5px;
+      background-color: rgba(var(--d69, 0, 149, 246), 0.3);
+      color: white;
+      border: 0;
+      font-size: 11px;
+      font-weight: bolder;
+    }
+  }
+
+  a {
+    margin-bottom: -20px;
+    color: darkblue;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bolder;
+  }
+}

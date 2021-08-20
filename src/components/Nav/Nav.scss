@@ -1,0 +1,61 @@
+nav {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+
+  .nav_in_layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 935px;
+    height: 54px;
+    margin: 0px auto;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+  }
+
+  #input_design {
+    position: relative;
+    width: 215px;
+    height: 28px;
+    border: 1px solid rgb(223, 223, 223);
+
+    input {
+      position: absolute;
+      width: 205px;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding-left: 10px;
+
+      &::placeholder {
+        text-align: center;
+      }
+    }
+
+    i {
+      position: absolute;
+      left: 35%;
+      top: 8px;
+      font-size: 12px;
+      color: rgb(178, 178, 178);
+    }
+  }
+
+  .icon_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+
+    & i {
+      font-size: 20px;
+      color: black;
+    }
+  }
+}

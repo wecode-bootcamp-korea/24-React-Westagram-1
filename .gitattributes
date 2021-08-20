@@ -1,0 +1,3 @@
+If you use git, you may want to add a line to your .gitattributes file to prevent git from converting linebreaks in .js files:
+
+*.js text eol=lf
