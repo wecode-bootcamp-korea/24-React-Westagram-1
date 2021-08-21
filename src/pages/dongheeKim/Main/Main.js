@@ -6,50 +6,22 @@ import '../../../components/Nav/Nav.scss';
 class MainDonghee extends Component {
   render() {
     return (
-      <div class="MainDonghee">
+      <div className="MainDonghee">
         <Nav />
-        {/* <nav>
-          <div class="nav-logo">
-            <div class="nav-logo_image"></div>
-
-            <div class="nav-logo_text">Westagram</div>
-          </div>
-
-          <div class="nav-search">
-            <input type="text" placeholder="검색" />
-
-            <i class="fas fa-search"></i>
-          </div>
-
-          <div class="nav-icons">
-            <a href="#">
-              <div class="nav-icons_safari"></div>
-            </a>
-
-            <a href="#">
-              <div class="nav-icons_heart"></div>
-            </a>
-
-            <a href="#">
-              <div class="nav-icons_person"></div>
-            </a>
-          </div>
-        </nav> */}
-
         {
           <main>
-            <div class="feeds">
+            <div className="feeds">
               <article>
-                <div class="feeds-profile">
-                  <div class="feeds-profile_account">
-                    <div class="feeds-profile_account_pic profile_pic"></div>
+                <div className="feeds-profile">
+                  <div className="feeds-profile_account">
+                    <div className="feeds-profile_account_pic profile_pic"></div>
 
-                    <div class="feeds-profile_account_name">
-                      <span class="bold">hayeonsoo_</span>
+                    <div className="feeds-profile_account_name">
+                      <span className="bold">hayeonsoo_</span>
                     </div>
                   </div>
 
-                  <div class="feeds-profile_dot">
+                  <div className="feeds-profile_dot">
                     <svg
                       aria-label="옵션"
                       class="_8-yf5 "
@@ -86,12 +58,12 @@ class MainDonghee extends Component {
                   </div>
                 </div>
 
-                <div class="feeds-pic"></div>
+                <div className="feeds-pic"></div>
 
-                <div class="feeds-status">
-                  <div class="feeds-status-icons">
+                <div className="feeds-status">
+                  <div className="feeds-status-icons">
                     <a href="#">
-                      <div class="feeds-status-icon_heart miniIcon">
+                      <div className="feeds-status-icon_heart miniIcon">
                         <svg
                           aria-label="좋아요"
                           class="_8-yf5 "
@@ -107,7 +79,7 @@ class MainDonghee extends Component {
                     </a>
 
                     <a href="#">
-                      <div class="feeds-status-icon_chat miniIcon">
+                      <div className="feeds-status-icon_chat miniIcon">
                         <svg
                           aria-label="댓글 달기"
                           class="_8-yf5 "
@@ -127,7 +99,7 @@ class MainDonghee extends Component {
                     </a>
 
                     <a href="#">
-                      <div class="feeds-status-icon_send miniIcon">
+                      <div className="feeds-status-icon_send miniIcon">
                         <svg
                           aria-label="게시물 공유"
                           class="_8-yf5 "
@@ -144,7 +116,7 @@ class MainDonghee extends Component {
                   </div>
 
                   <a href="#">
-                    <div class="feeds-status-icon_bookmark">
+                    <div className="feeds-status-icon_bookmark">
                       <svg
                         aria-label="저장"
                         class="_8-yf5 "
@@ -160,134 +132,138 @@ class MainDonghee extends Component {
                   </a>
                 </div>
 
-                <div class="feeds-text">
-                  <div class="feeds-text_like">
-                    <span class="bold">wecode_bootcamp님 외 100명</span>이
+                <div className="feeds-text">
+                  <div className="feeds-text_like">
+                    <span className="bold">wecode_bootcamp님 외 100명</span>이
                     좋아합니다
                   </div>
 
                   <div>
-                    <span class="accountName">hayeonsoo_</span>고양이🐱
+                    <span className="accountName">hayeonsoo_</span>고양이🐱
                   </div>
                 </div>
 
-                <div class="font-graysmall feeds-text_minutes">
+                <div className="font-graysmall feeds-text_minutes">
                   <span>7분 전</span>
                 </div>
 
-                <div class="feeds-comment">
+                <div className="feeds-comment">
                   <input
                     type="text"
                     placeholder="댓글 달기..."
                     class="feeds-comment_box"
                   />
 
-                  <button class="feeds-comment_btn">게시</button>
+                  <button className="feeds-comment_btn">게시</button>
                 </div>
               </article>
             </div>
 
-            <div class="profile">
-              <div class="myProfile">
-                <div class="myProfile-pic"></div>
+            <div className="profile">
+              <div className="myProfile">
+                <div className="myProfile-pic"></div>
 
-                <div class="profilename">
-                  <span class="bold">dlwlrma</span>
+                <div className="profilename">
+                  <span className="bold">dlwlrma</span>
 
-                  <span class="font-gray">이지금 IU</span>
+                  <span className="font-gray">이지금 IU</span>
                 </div>
               </div>
 
-              <div class="story">
-                <div class="profile_header">
-                  <span class="font-graybold">스토리</span>
+              <div className="story">
+                <div className="profile_header">
+                  <span className="font-graybold">스토리</span>
 
-                  <span class="bold">모두보기</span>
+                  <span className="bold">모두보기</span>
                 </div>
 
-                <div class="story-account">
-                  <div class="story_pic1 profile_pic"></div>
+                <div className="story-account">
+                  <div className="story_pic1 profile_pic"></div>
 
-                  <div class="profilename">
-                    <span class="bold">wecode_bootcamp</span>
+                  <div className="profilename">
+                    <span className="bold">wecode_bootcamp</span>
 
-                    <span class="font-gray">5분 전</span>
+                    <span className="font-gray">5분 전</span>
                   </div>
                 </div>
 
-                <div class="story-account">
-                  <div class="story_pic2 profile_pic"></div>
+                <div className="story-account">
+                  <div className="story_pic2 profile_pic"></div>
 
-                  <div class="profilename">
-                    <span class="bold">kimyk10</span>
+                  <div className="profilename">
+                    <span className="bold">kimyk10</span>
 
-                    <span class="font-gray">10분 전</span>
+                    <span className="font-gray">10분 전</span>
                   </div>
                 </div>
 
-                <div class="story-account">
-                  <div class="story_pic3 profile_pic"></div>
+                <div className="story-account">
+                  <div className="story_pic3 profile_pic"></div>
 
-                  <div class="profilename">
-                    <span class="bold">songkang_b</span>
+                  <div className="profilename">
+                    <span className="bold">songkang_b</span>
 
-                    <span class="font-gray">30분 전</span>
+                    <span className="font-gray">30분 전</span>
                   </div>
                 </div>
               </div>
 
-              <div class="recommend">
-                <div class="profile_header">
-                  <span class="font-graybold">회원님을 위한 추천</span>
+              <div className="recommend">
+                <div className="profile_header">
+                  <span className="font-graybold">회원님을 위한 추천</span>
 
-                  <span class="bold">모두보기</span>
+                  <span className="bold">모두보기</span>
                 </div>
 
-                <div class="recommend-wrap">
-                  <div class="recommend-account">
-                    <div class="recommend-pic1 profile_pic"></div>
+                <div className="recommend-wrap">
+                  <div className="recommend-account">
+                    <div className="recommend-pic1 profile_pic"></div>
 
-                    <div class="profilename">
-                      <span class="bold">byemypie</span>
+                    <div className="profilename">
+                      <span className="bold">byemypie</span>
 
-                      <span class="font-gray">songkang_b님 외 10분이...</span>
+                      <span className="font-gray">
+                        songkang_b님 외 10분이...
+                      </span>
                     </div>
                   </div>
 
-                  <span class="font-blue">팔로우</span>
+                  <span className="font-blue">팔로우</span>
                 </div>
 
-                <div class="recommend-wrap">
-                  <div class="recommend-account">
-                    <div class="recommend-pic2 profile_pic"></div>
+                <div className="recommend-wrap">
+                  <div className="recommend-account">
+                    <div className="recommend-pic2 profile_pic"></div>
 
-                    <div class="profilename">
-                      <span class="bold">verte.official</span>
+                    <div className="profilename">
+                      <span className="bold">verte.official</span>
 
-                      <span class="font-gray">hayeonsoo_님 외 30분이...</span>
+                      <span className="font-gray">
+                        hayeonsoo_님 외 30분이...
+                      </span>
                     </div>
                   </div>
 
-                  <span class="font-blue">팔로우</span>
+                  <span className="font-blue">팔로우</span>
                 </div>
 
-                <div class="recommend-wrap">
-                  <div class="recommend-account">
-                    <div class="recommend-pic3 profile_pic"></div>
+                <div className="recommend-wrap">
+                  <div className="recommend-account">
+                    <div className="recommend-pic3 profile_pic"></div>
 
-                    <div class="profilename">
-                      <span class="bold">woo_238</span>
+                    <div className="profilename">
+                      <span className="bold">woo_238</span>
 
-                      <span class="font-gray">kimyk10님 외 20분이...</span>
+                      <span className="font-gray">kimyk10님 외 20분이...</span>
                     </div>
                   </div>
 
-                  <span class="font-blue">팔로우</span>
+                  <span className="font-blue">팔로우</span>
                 </div>
               </div>
 
-              <div class="info">
-                <p class="font-graysmall">
+              <div className="info">
+                <p className="font-graysmall">
                   소개 · 도움말 · 홍보 센터 · API · 채용 정보 ·
                   <br />
                   개인정보처리방침 · 약관 · 위치 · 인기 계정 · 해시태그 · 언어{' '}

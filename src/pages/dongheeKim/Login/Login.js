@@ -27,7 +27,7 @@ class LoginDonghee extends Component {
     return (
       <>
         <div class="LoginDonghee">
-          <span class="logo">Westagram</span>
+          <span className="logo">Westagram</span>
           <form action="" method="get" class="loginBox">
             <input
               type="text"
