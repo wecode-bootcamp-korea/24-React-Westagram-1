@@ -16,8 +16,8 @@ class Main extends Component {
               <i className="fab fa-instagram icon"></i>
               <h1>westagram</h1>
             </a>
-            {/* <!-- // westagram title -->
-               <!-- search-form --> */}
+            {/* <!-- // westagram title --> */}
+            {/* <!-- search-form -->  */}
             <form className="search-form">
               <i class="fas fa-search icon"></i>
               <input
@@ -55,65 +55,96 @@ class Main extends Component {
             {/* <!-- feeds --> */}
             <div className="feeds">
               <article className="user-feeds">
-                <ul className="user-feeds__profile">
-                  <li>
-                    <a href="#" className="user-feeds__profile--me">
-                      <span className="user-feeds__profile--name">
-                        wecode_bootcamp
-                      </span>
-                    </a>
-                  </li>
-                  <li className="user-feeds__profile--option">
-                    <a href="#">
-                      <span className="ir_pm">option plus</span>
-                      <i className="fas fa-ellipsis-h icon"></i>
-                    </a>
-                  </li>
-                </ul>
+                <div className="user-feeds__profile">
+                  <a href="#" className="user-feeds__profile--me">
+                    <div className="user-feeds__profile--img">
+                      <img src={DogImg} alt="피드사진" />
+                    </div>
+
+                    <strong className="user-feeds__profile--name">
+                      wecode_bootcamp
+                    </strong>
+                  </a>
+                  <a href="#" className="user-feeds__profile--option">
+                    <span className="ir_pm">option plus</span>
+                    <i className="fas fa-ellipsis-h icon"></i>
+                  </a>
+                </div>
                 {/* <!-- feeds contentImg--> */}
-                <div className="feeds-contentImg">
-                  <figure>
-                    <img src={DogImg} alt="피드사진" />
-                  </figure>
+                <div className="feeds-content__img">
+                  <img src={DogImg} alt="피드사진" />
                 </div>
 
                 {/* <!-- //feeds contentImg --> */}
                 {/* <!-- feeds icons -->*/}
-                <ul className="feeds-icons">
-                  <li>
-                    <i className="far fa-heart icon"></i>
-                    <span className="ir_pm">좋아요</span>
-                  </li>
-                  <li>
-                    <i className="far fa-comment icon"></i>
-                    <span className="ir_pm">댓글</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-location-arrow icon"></i>
-                    <span className="ir_pm">공유</span>
-                  </li>
-                  <li>
-                    <i className="far fa-bookmark icon"></i>
-                    <span className="ir_pm">북마크</span>
-                  </li>
-                </ul>
-                {/* <!-- // feeds icons --> */}
-                <ul className="feeds-comment">
-                  <li>
-                    <i className="friend-icon icon"></i>
-                    <b className="friend-name">vi2920va</b>님<b>외10명</b>이
-                    좋아합니다
-                  </li>
-                  <li className="feeds-text">
-                    <strong>wecode_bootcamp</strong>
-                    <em>위코드에서 인스타그램 클론 코딩하는 중</em>
-                    <span>더 보기</span>
-                  </li>
-                </ul>
+                <div className="feeds__content">
+                  <ul className="feeds-icons">
+                    <li>
+                      <i className="far fa-heart icon"></i>
+                      <span className="ir_pm">좋아요</span>
+                    </li>
+                    <li>
+                      <i className="far fa-comment icon"></i>
+                      <span className="ir_pm">댓글</span>
+                    </li>
+                    <li>
+                      <i className="fas fa-location-arrow icon"></i>
+                      <span className="ir_pm">공유</span>
+                    </li>
+                    <li>
+                      <i className="far fa-bookmark icon"></i>
+                      <span className="ir_pm">북마크</span>
+                    </li>
+                  </ul>
+
+                  <div className="feeds__likes">
+                    <div className="user-feeds__profile--img">
+                      <img src={DogImg} alt="피드사진" />
+                    </div>
+                    <p>
+                      <b className="user-feeds__name--others">vi2920va</b>님
+                      <b> 외 10명</b>이 좋아합니다.
+                    </p>
+                  </div>
+                  {/* <!-- // feeds icons --> */}
+                  <div className="feeds-comment">
+                    {/* <!--더보기 전 --> */}
+                    <p className="feeds-comment__text">
+                      <strong>wecode_bootcamp</strong>
+                      <em>위코드에서 인스타그램 클론 코딩하는 중</em>
+                      <button>더 보기</button>
+                    </p>
+
+                    {/* <!-- 더보기 누른 후 댓글 --> */}
+                    <ul className="feeds-comment__list">
+                      <li className="feeds-comment__reply">
+                        <div className="user-feeds__profile--img">
+                          <img src={DogImg} alt="피드사진" />
+                        </div>
+                        <b className="user-feeds__name--others">vi2920va</b>님
+                        <p>우와우오언어dd</p>
+                      </li>
+                      <li className="feeds-comment__reply">
+                        <div className="user-feeds__profile--img">
+                          <img src={DogImg} alt="피드사진" />
+                        </div>
+                        <b className="user-feeds__name--others">vi2920va</b>님
+                        <p>우와우오언어dd</p>
+                      </li>
+                      <li className="feeds-comment__reply">
+                        <div className="user-feeds__profile--img">
+                          <img src={DogImg} alt="피드사진" />
+                        </div>
+                        <b className="user-feeds__name--others">vi2920va</b>님
+                        <p>우와우오언어dd</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 <form className="add-comment">
                   <input
                     type="text"
-                    id="addInput"
+                    id="add-input"
                     placeholder="댓글달기..."
                     aria-label="댓글추가"
                   />
@@ -136,7 +167,7 @@ class Main extends Component {
                     wecode_bootcamp
                   </span>
                   <span className="main-right__myProfile__info--place">
-                    wecode | 위코드
+                    Wecode | 위코드
                   </span>
                 </div>
               </div>
@@ -196,7 +227,7 @@ class Main extends Component {
                       <figure>
                         <img src={DogImg} alt="musinsa standard" />
                         <figcaption>
-                          <strong>musina_standard</strong>class
+                          <strong>musina_standard</strong>
                           <em>_ieqnd_a님 외2명이</em>
                           <span>팔로우</span>
                         </figcaption>
