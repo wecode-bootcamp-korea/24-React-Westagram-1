@@ -1,0 +1,219 @@
+// 공통
+.ir_pm {
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.icon {
+  display: block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.wrapper {
+  background-color: lightgray;
+  box-sizing: border-box;
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    top: 0;
+    position: sticky;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+
+    #logo {
+      display: flex;
+      text-decoration: none;
+      color: black;
+
+      i {
+        margin: 0 10px;
+        font-size: 33px;
+      }
+
+      h1 {
+        padding-left: 10px;
+        border-left: 2px solid black;
+        font-size: 30px;
+      }
+
+    }
+
+    // -- #logo
+
+    .search-form {
+      display: flex;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      background: rgba(240, 239, 239, 0.377);
+      color: #8e8e8e;
+
+      .icon {
+        width: 15px;
+        height: 15px;
+        margin-top: 7px;
+        background: #fff;
+      }
+
+      &__input {
+        width: calc(100% - 35px);
+        text-align: center;
+        border: 0;
+        border: 1px solid #e0e0e0;
+
+        padding: 0;
+      }
+    }
+
+    .right-icons {
+      display: flex;
+      justify-content: space-between;
+      width: 150px;
+
+      a {
+        margin-top: 6px;
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  //-- nav
+
+  main {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+
+    .feeds {
+      width: 614px;
+      height: 500px;
+      margin: 30px 50px 0 0;
+      border: 1px solid #e0e0e0;
+
+      .user-feeds {
+
+        &__profile {
+          display: flex;
+          justify-content: space-between;
+          height: 44px;
+          padding: 0 5px;
+
+          &--me {
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin: 4px 0;
+            border-radius: 50%;
+            text-decoration: none;
+            background: url(../../../assets/images/IMG_2625.jpg) center/cover;
+          }
+
+          &--name {
+            display: block;
+            line-height: 30px;
+            margin: 0 45px;
+            font-size: 14px;
+            font-weight: 700;
+          }
+
+          &--option {
+            a {
+              text-decoration: none;
+              color: black;
+
+              .icon {
+                margin: 13px 0;
+              }
+            }
+          }
+        }
+
+        //-- user-profile
+      }
+
+      figure {
+        img {
+          // width: 500px;
+          width: 614px;
+        }
+      }
+    }
+
+    .feeds-icons {
+      display: flex;
+      padding-left: 5px;
+      background-color: orchid;
+
+
+      :last-child {
+        margin-left: auto;
+      }
+    }
+
+    // --feeds-icons
+    .feeds-comment {
+      background: blanchedalmond;
+
+      li:first-child {
+        display: flex;
+        font-size: 12px;
+        line-height: 26px;
+
+
+        .friend-name {
+          margin-left: 7px;
+        }
+
+      }
+
+      .feeds-text {
+        margin: -12px 0px 0px 5px;
+        line-height: 23px;
+        font-size: 12px;
+
+        strong {
+          margin-right: 5px;
+          font-weight: 600;
+        }
+      }
+
+      .friend-icon {
+        width: 25px;
+        height: 25px;
+        margin: 0px 0px 10px 3px;
+        border-radius: 50%;
+        background: url(../../../assets/images/IMG_2625.jpg) center/cover;
+      }
+    }
+
+    // --feeds-comment
+
+    .main-right {
+      height: 500px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+    }
+
+    // -- feeds
+  }
+
+  // -- main
+}
+
+// --wrapper
