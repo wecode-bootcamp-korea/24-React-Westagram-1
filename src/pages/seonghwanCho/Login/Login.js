@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import './Login.scss';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputId: '',
+      inputPw: '',
+    };
+  }
   render() {
     return (
       <div className="Login">
@@ -16,6 +23,11 @@ class Login extends Component {
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                   className="inputBox"
                   id="inputEmail"
+                  onChange={e => {
+                    this.setState({
+                      inputId: e.target.value,
+                    });
+                  }}
                 />
               </div>
               <div>
@@ -24,6 +36,11 @@ class Login extends Component {
                   placeholder="비밀번호"
                   className="inputBox"
                   id="inputPw"
+                  onChange={e => {
+                    this.setState({
+                      inputPw: e.target.value,
+                    });
+                  }}
                 />
               </div>
             </div>
