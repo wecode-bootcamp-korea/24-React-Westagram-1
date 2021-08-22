@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import './Login.scss';
 
+// Mission-1 Login 사용자 입력 데이터 저장
+// - ID <input에서> onChange event를 발생
+// - event 발생시 handleInput 함수를 실행
+// - event.target.value를 state에 저장
+// - 위의 과정을 PW <input>에도 동일하게 적용.
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      pwd: '',
-      pass: false,
+      ID: '',
+      PW: '',
     };
+    this.handleInput = this.handleInput.bind(this);
   }
 
-  handleChange(e) {
-    if (e.target.value.length > 1 && e.target.value.includes('@')) {
-      this.setState({
-        email: e.target.value,
-      });
-    }
-  }
+  handleInput = event => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
   render() {
-    console.log(this.state);
+    console.log(this.state['ID']);
     return (
       <div className="login">
         <div className="login-container">
@@ -27,17 +30,20 @@ class Login extends Component {
           <form className="login-form">
             <input
               type="email"
+              name="ID"
               className="login-input"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={e => this.handleChange(e)}
+              onChange={this.handleInput}
               aria-label="이메일"
             />
             <input
               type="password"
+              name="PW"
               className="login-input"
               placeholder="비밀번호"
               autoComplete="off"
               aria-label="비밀번호"
+              onChange={this.handleInput}
             />
             <button type="submit" className="login-btn">
               로그인
