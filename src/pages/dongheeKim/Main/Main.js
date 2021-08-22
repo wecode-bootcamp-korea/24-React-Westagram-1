@@ -29,7 +29,6 @@ class MainDonghee extends Component {
   createCommentEnter = e => {
     if (e.key === 'Enter') {
       this.createComment();
-      e.target.value = null;
     }
   };
 
