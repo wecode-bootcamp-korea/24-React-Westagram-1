@@ -8,8 +8,10 @@ class Login extends Component {
     this.state = {
       inputId: '',
       inputPw: '',
+      loginBtnClass: 'loginBtn',
     };
   }
+
   render() {
     return (
       <div className="Login">
@@ -46,7 +48,16 @@ class Login extends Component {
             </div>
             <div>
               <Link to="/main-seong">
-                <button className="loginBtn">로그인</button>
+                <button
+                  className={
+                    this.state.inputId.includes('@') &&
+                    this.state.inputPw.length >= 5
+                      ? 'loginBtnActive'
+                      : 'loginBtn'
+                  }
+                >
+                  로그인
+                </button>
               </Link>
             </div>
           </article>

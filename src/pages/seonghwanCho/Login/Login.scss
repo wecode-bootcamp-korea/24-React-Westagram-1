@@ -21,7 +21,7 @@
     header {
       margin-top: 30px;
       font-size: 120px;
-      font-family: "Lobster", cursive;
+      font-family: 'Lobster', cursive;
     }
 
     article {
@@ -54,6 +54,17 @@
         margin: 22px;
         color: #ffffff;
         background-color: #c4e1fb;
+        border: none;
+        border-radius: 7px;
+        font-size: 23px;
+      }
+
+      .loginBtnActive {
+        width: 535px;
+        height: 60px;
+        margin: 22px;
+        color: #ffffff;
+        background-color: #2196f3;
         border: none;
         border-radius: 7px;
         font-size: 23px;
