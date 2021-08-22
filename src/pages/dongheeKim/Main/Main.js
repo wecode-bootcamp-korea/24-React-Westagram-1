@@ -4,6 +4,35 @@ import Nav from '../../../components/Nav/Nav';
 import '../../../components/Nav/Nav.scss';
 
 class MainDonghee extends Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+      commentList: [],
+    };
+  }
+
+  getComment = event => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
+
+  createComment = e => {
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.value]),
+    });
+    var input = document.getElementsByClassName('feeds-comment_box')[0];
+    input.value = null;
+  };
+
+  createCommentEnter = e => {
+    if (e.key === 'Enter') {
+      this.createComment();
+      e.target.value = null;
+    }
+  };
+
   render() {
     return (
       <div className="MainDonghee">
@@ -137,10 +166,43 @@ class MainDonghee extends Component {
                     <span className="bold">wecode_bootcamp님 외 100명</span>이
                     좋아합니다
                   </div>
-
-                  <div>
+                  <div className="feed-text_contents">
                     <span className="accountName">hayeonsoo_</span>고양이🐱
                   </div>
+                  <ul>
+                    <li>
+                      <span>
+                        <span class="accountName">donghee</span>귀여워!!! 💕
+                      </span>
+                      <div>
+                        <span class="heart">
+                          <i class="far fa-heart"></i>
+                        </span>
+                        <span class="delete">
+                          <i class="far fa-trash-alt"></i>
+                        </span>
+                      </div>
+                    </li>
+
+                    {this.state.commentList.map((commentInput, idx) => {
+                      return (
+                        <li key={idx}>
+                          <span>
+                            <span class="accountName">donghee</span>
+                            {commentInput}
+                          </span>
+                          <div>
+                            <span class="heart">
+                              <i class="far fa-heart"></i>
+                            </span>
+                            <span class="delete">
+                              <i class="far fa-trash-alt"></i>
+                            </span>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
 
                 <div className="font-graysmall feeds-text_minutes">
@@ -149,12 +211,18 @@ class MainDonghee extends Component {
 
                 <div className="feeds-comment">
                   <input
+                    onChange={this.getComment}
+                    onKeyPress={this.createCommentEnter}
                     type="text"
                     placeholder="댓글 달기..."
-                    class="feeds-comment_box"
+                    className="feeds-comment_box"
                   />
-
-                  <button className="feeds-comment_btn">게시</button>
+                  <button
+                    onClick={this.createComment}
+                    className="feeds-comment_btn"
+                  >
+                    게시
+                  </button>
                 </div>
               </article>
             </div>

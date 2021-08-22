@@ -107,20 +107,33 @@
             }
           }
 
-          .accountName {
-            color: rgba(var(--f75, 38, 38, 38), 1);
-            font-weight: 600;
-            margin-right: 5px;
-            cursor: Pointer;
+          .feed-text_contents {
+            .accountName {
+              color: rgba(var(--f75, 38, 38, 38), 1);
+              font-weight: 600;
+              margin-right: 5px;
+              cursor: Pointer;
+            }
           }
 
           li {
             display: flex;
-            margin-top: 5px;
+            margin-top: 10px;
             padding-right: 20px;
             justify-content: space-between;
             list-style: none;
             text-align: center;
+
+            .accountName {
+              color: rgba(var(--f75, 38, 38, 38), 1);
+              font-weight: 600;
+              margin-right: 5px;
+              cursor: Pointer;
+            }
+
+            .delete {
+              margin-left: 10px;
+            }
           }
         }
 
