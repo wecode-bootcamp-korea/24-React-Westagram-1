@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CommentList from './CommentList/CommentList';
 import DogImg from '../../../assets/images/IMG_2625.jpg';
 import './Main.scss';
 
@@ -223,8 +224,10 @@ class Main extends Component {
                   </li>
                 </ul>
               </div>
+              Comment
               {/* <!--//friends story --> */}
-              {/* <!-- friend for you -->  */}
+              {/* <!-- friend for you -
+        <CommentList />->  */}
               <div className="main-right__forYou">
                 <div className="main-right__forYou__title">
                   <h2>회원님을 위한 추천</h2>
@@ -285,6 +288,7 @@ class Main extends Component {
           </main>
           {/* <!-- // wrapper --> */}
         </div>
+        <CommentList />
       </>
     );
   }
