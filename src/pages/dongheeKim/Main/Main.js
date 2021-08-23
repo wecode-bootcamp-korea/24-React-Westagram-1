@@ -2,14 +2,26 @@ import React, { Component } from 'react';
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import '../../../components/Nav/Nav.scss';
+import Comment from '../../../components/dongheeKim/comment';
 
 class MainDonghee extends Component {
   constructor() {
     super();
     this.state = {
       value: '',
+      commentUser: '',
       commentList: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData_donghee.json', {})
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
   }
 
   getComment = event => {
@@ -19,8 +31,14 @@ class MainDonghee extends Component {
   };
 
   createComment = e => {
+    const comment = {
+      idx: Date.now(),
+      accountName: 'donghee',
+      commentInput: this.state.value,
+    };
+
     this.setState({
-      commentList: this.state.commentList.concat([this.state.value]),
+      commentList: this.state.commentList.concat(comment),
     });
     var input = document.getElementsByClassName('feeds-comment_box')[0];
     input.value = null;
@@ -168,60 +186,50 @@ class MainDonghee extends Component {
                   <div className="feed-text_contents">
                     <span className="accountName">hayeonsoo_</span>고양이🐱
                   </div>
-                  <ul>
-                    <li>
-                      <span>
-                        <span class="accountName">donghee</span>귀여워!!! 💕
-                      </span>
-                      <div>
-                        <span class="heart">
-                          <i class="far fa-heart"></i>
-                        </span>
-                        <span class="delete">
-                          <i class="far fa-trash-alt"></i>
-                        </span>
-                      </div>
-                    </li>
 
-                    {this.state.commentList.map((commentInput, idx) => {
+                  <ul>
+                    {this.state.commentList.map((comment, idx) => {
                       return (
-                        <li key={idx}>
-                          <span>
-                            <span class="accountName">donghee</span>
-                            {commentInput}
-                          </span>
-                          <div>
-                            <span class="heart">
-                              <i class="far fa-heart"></i>
-                            </span>
-                            <span class="delete">
-                              <i class="far fa-trash-alt"></i>
-                            </span>
-                          </div>
-                        </li>
+                        <Comment key={idx} comment={comment} />
+                        // <li key={idx}>
+                        //   <span>
+                        //     <span className="accountName">
+                        //       {comment.accountName}
+                        //     </span>
+                        //     <span>{comment.commentInput}</span>
+                        //   </span>
+                        //   <div>
+                        //     <span class="heart">
+                        //       <i class="far fa-heart"></i>
+                        //     </span>
+                        //     <span class="delete">
+                        //       <i class="far fa-trash-alt"></i>
+                        //     </span>
+                        //   </div>
+                        // </li>
                       );
                     })}
                   </ul>
-                </div>
 
-                <div className="font-graysmall feeds-text_minutes">
-                  <span>7분 전</span>
-                </div>
+                  <div className="font-graysmall feeds-text_minutes">
+                    <span>7분 전</span>
+                  </div>
 
-                <div className="feeds-comment">
-                  <input
-                    onChange={this.getComment}
-                    onKeyPress={this.createCommentEnter}
-                    type="text"
-                    placeholder="댓글 달기..."
-                    className="feeds-comment_box"
-                  />
-                  <button
-                    onClick={this.createComment}
-                    className="feeds-comment_btn"
-                  >
-                    게시
-                  </button>
+                  <div className="feeds-comment">
+                    <input
+                      onChange={this.getComment}
+                      onKeyPress={this.createCommentEnter}
+                      type="text"
+                      placeholder="댓글 달기..."
+                      className="feeds-comment_box"
+                    />
+                    <button
+                      onClick={this.createComment}
+                      className="feeds-comment_btn"
+                    >
+                      게시
+                    </button>
+                  </div>
                 </div>
               </article>
             </div>
