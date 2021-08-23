@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import DogImg from '../../../assets/images/IMG_2625.jpg';
 import './Main.scss';
 
-// nav 로고 부분과 콘텐츠 중앙 정렬
-// 검색 폼 아이콘 중앙 정렬 미해결
 class Main extends Component {
   render() {
     return (
@@ -60,7 +58,6 @@ class Main extends Component {
                     <div className="user-feeds__profile--img">
                       <img src={DogImg} alt="피드사진" />
                     </div>
-
                     <strong className="user-feeds__profile--name">
                       wecode_bootcamp
                     </strong>
@@ -74,9 +71,8 @@ class Main extends Component {
                 <div className="feeds-content__img">
                   <img src={DogImg} alt="피드사진" />
                 </div>
-
                 {/* <!-- //feeds contentImg --> */}
-                {/* <!-- feeds icons -->*/}
+                {/* <!-- feeds content -->*/}
                 <div className="feeds__content">
                   <ul className="feeds-icons">
                     <li>
@@ -96,7 +92,6 @@ class Main extends Component {
                       <span className="ir_pm">북마크</span>
                     </li>
                   </ul>
-
                   <div className="feeds__likes">
                     <div className="user-feeds__profile--img">
                       <img src={DogImg} alt="피드사진" />
@@ -106,7 +101,7 @@ class Main extends Component {
                       <b> 외 10명</b>이 좋아합니다.
                     </p>
                   </div>
-                  {/* <!-- // feeds icons --> */}
+                  {/* <!-- // feeds content --> */}
                   <div className="feeds-comment">
                     {/* <!--더보기 전 --> */}
                     <p className="feeds-comment__text">
@@ -121,22 +116,25 @@ class Main extends Component {
                         <div className="user-feeds__profile--img">
                           <img src={DogImg} alt="피드사진" />
                         </div>
-                        <b className="user-feeds__name--others">vi2920va</b>님
-                        <p>우와우오언어dd</p>
+                        <b className="user-feeds__name--others">vi2920va</b>
+                        <p>위워크에서 React 진행중</p>
+                        <i className="far fa-heart icon"></i>
                       </li>
                       <li className="feeds-comment__reply">
                         <div className="user-feeds__profile--img">
                           <img src={DogImg} alt="피드사진" />
                         </div>
-                        <b className="user-feeds__name--others">vi2920va</b>님
-                        <p>우와우오언어dd</p>
+                        <b className="user-feeds__name--others">songsong08</b>
+                        <p>엇 강아지 귀엽다 포메리안 인가 ? 👀 </p>
+                        <i className="far fa-heart icon"></i>
                       </li>
                       <li className="feeds-comment__reply">
                         <div className="user-feeds__profile--img">
                           <img src={DogImg} alt="피드사진" />
                         </div>
-                        <b className="user-feeds__name--others">vi2920va</b>님
-                        <p>우와우오언어dd</p>
+                        <b className="user-feeds__name--others">boot_camp24</b>
+                        <p>몽구 오랜만 엄청 컸네 😻</p>
+                        <i className="far fa-heart icon"></i>
                       </li>
                     </ul>
                   </div>
@@ -145,7 +143,7 @@ class Main extends Component {
                   <input
                     type="text"
                     id="add-input"
-                    placeholder="댓글달기..."
+                    placeholder="댓글 달기..."
                     aria-label="댓글추가"
                   />
                   <button type="submit" className="add-btn" disabled>
@@ -181,6 +179,17 @@ class Main extends Component {
                 <ul className="main-right__story__list">
                   <li>
                     <a href="#">
+                      <figure>
+                        <img src={DogImg} alt="user vi2920va" />
+                        <figcaption>
+                          <strong>_yum_s</strong>
+                          <span>16분전</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
                       <figure>
                         <img src={DogImg} alt="user vi2920va" />
                         <figcaption>
@@ -261,6 +270,16 @@ class Main extends Component {
                 </ul>
               </div>
               {/* <!--//friend for you--> */}
+              {/* footer */}
+              <footer>
+                <p>
+                  westagram 정보, 지원 홍보 센터·API· <br />
+                  채용정보·개인정보처리방침 약관·
+                  <br />
+                  디렉터리·프로필·해시태그 언어
+                </p>
+                <p className="copyright">@ 2019 WESTAGRAM</p>
+              </footer>
             </div>
             {/* <!-- //main-right --> */}
           </main>

@@ -47,6 +47,8 @@ a {
         padding-left: 10px;
         border-left: 2px solid black;
         font-size: 30px;
+        font-family: "Lobster",
+          cursive;
       }
 
     }
@@ -57,7 +59,7 @@ a {
       display: flex;
       height: 29px;
       border: 1px solid #e0e0e0;
-      border-radius: 5px;
+      border-radius: 2px;
       background: rgba(240, 239, 239, 0.377);
       color: #8e8e8e;
 
@@ -106,7 +108,7 @@ a {
 
       .user-feeds {
         border: 1px solid #e0e0e0;
-        border-radius: 5px;
+        border-radius: 2px;
 
         &__profile {
           display: flex;
@@ -121,8 +123,8 @@ a {
 
           &--img {
             display: block;
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            height: 24px;
             margin-right: 10px;
             border-radius: 50%;
             text-decoration: none;
@@ -130,20 +132,21 @@ a {
 
             img {
               width: 100%;
-              height: auto;
+              // height: auto;
+              height: 100%;
             }
           }
 
           &--name {
-            line-height: 30px;
-            font-size: 14px;
-            font-weight: 700
+            line-height: 21px;
+            font-size: 12px;
+            font-weight: 600
           }
 
           &--option {
-            a {
-              text-decoration: none;
-              color: black;
+            i {
+              font-size: 13px;
+              margin-right: -13px;
             }
           }
         }
@@ -163,13 +166,12 @@ a {
       }
 
       &__content {
-        padding: 10px;
+        padding: 10px 8px;
       }
 
       &-icons {
         display: flex;
-        padding-left: 5px;
-        font-size: 19px;
+        font-size: 16px;
 
         >*+* {
           margin-left: 10px;
@@ -177,12 +179,21 @@ a {
 
         li:last-of-type {
           margin-left: auto;
+
+          i {
+            margin-right: -10px;
+          }
         }
       }
 
       &__likes {
         display: flex;
         align-items: center;
+        font-size: 12px;
+
+        b {
+          font-weight: 600;
+        }
       }
 
       &-comment {
@@ -192,9 +203,10 @@ a {
           align-items: center;
           font-size: 12px;
           line-height: 26px;
+          margin-left: 2px;
 
           strong {
-            margin-right: 10px;
+            margin-right: 2px;
             font-weight: 700;
           }
 
@@ -205,6 +217,7 @@ a {
             padding: 0;
             background: none;
             font-size: inherit;
+            color: gray;
           }
         }
 
@@ -233,10 +246,21 @@ a {
           display: flex;
           align-items: center;
           font-size: 12px;
-          margin-bottom: 10px;
+          padding-bottom: 2px;
+
+          b {
+            margin-left: -3px;
+            font-weight: 600;
+          }
 
           p {
-            margin-left: 10px;
+            margin-left: 5px;
+          }
+
+          .fa-heart {
+            margin-left: auto;
+            margin-right: -10px;
+            color: gray;
           }
         }
 
@@ -258,11 +282,13 @@ a {
 
       input {
         display: block;
-        width: 89%;
-        padding: 0 10px;
+        width: 80%;
+        padding: 0 21px;
         background: transparent;
         border: 0;
         outline: 0;
+        font-size: 11px;
+        color: gray;
       }
 
       .add-btn {
@@ -271,23 +297,24 @@ a {
         border: 0;
         outline: 0;
         background: transparent;
+        font-size: 11px;
         color: #b2dffc;
       }
     }
 
     // -- add-comment
-
+    // 여기서 부터 작업
     .main-right {
       margin-top: 33px;
 
       &__myProfile {
         display: flex;
-        padding-left: 13px;
+        padding-left: 8px;
 
         &__Img {
           .profile-img {
-            width: 38px;
-            height: 38px;
+            width: 43px;
+            height: 43px;
             border-radius: 50%;
             background: url(../../../assets/images/IMG_2625.jpg) center/cover;
           }
@@ -296,6 +323,7 @@ a {
         &__info {
           display: flex;
           flex-direction: column;
+          margin: 11px 0 0 6px;
 
           &--name {
             font-size: 10px;
@@ -304,8 +332,8 @@ a {
 
           &--place {
             display: block;
-            margin-left: 10px;
-            font-size: 11px;
+            margin: 2px 0 0 1px;
+            font-size: 10px;
             color: gray;
           }
         }
@@ -314,16 +342,17 @@ a {
       &__story {
         display: flex;
         flex-direction: column;
+        height: 171px;
         padding: 10px;
         margin-top: 10px;
         border: 1px solid silver;
         border-radius: 3px;
         background: #fff;
+        overflow: hidden;
 
         &__title {
           display: flex;
           justify-content: space-between;
-          margin: 5px 0;
           font-size: 11px;
           font-weight: 600;
           color: gray;
@@ -338,11 +367,9 @@ a {
         &__list {
           li {
             display: flex;
-            margin: 5px 5px;
+            margin: 8px 0;
             line-height: 9px;
             font-size: 14px;
-
-
 
             figure {
               display: flex;
@@ -361,7 +388,7 @@ a {
                 strong {
                   display: flex;
                   flex-direction: column;
-                  margin: 6px 10px 10px 9px;
+                  margin: 12px 10px 6px 7px;
                   font-size: 11px;
                   font-weight: 600;
                 }
@@ -385,18 +412,20 @@ a {
         flex-direction: column;
         margin-top: 10px;
         border: 1px solid silver;
-        border-radius: 5px;
+        border-radius: 2px;
         background: #fff;
 
 
         &__title {
           display: flex;
           justify-content: space-between;
-          margin: 5px 0;
-          font-size: 14px;
+          margin: 8px 9px;
+          font-size: 11px;
+          font-weight: 600;
           color: gray;
 
           a {
+            font-size: 10px;
             font-weight: 600;
             color: black;
           }
@@ -405,7 +434,7 @@ a {
         &__list {
           li {
             display: flex;
-            margin: 8px 5px;
+            margin: 7px 12px;
             padding: 0;
             line-height: 9px;
 
@@ -415,7 +444,6 @@ a {
               img {
                 width: 32px;
                 height: 32px;
-                border: 3px solid #0095f6;
                 border-radius: 50%;
               }
 
@@ -427,22 +455,54 @@ a {
                 strong {
                   display: flex;
                   margin: 6px 0 3px 6px;
-                  font-size: 13px;
+                  font-size: 11px;
                   font-weight: 600;
                 }
               }
 
               em {
+                font-size: 11px;
                 padding-top: 2px;
                 margin: 0 10px 0 7px;
+                color: gray;
               }
 
               span {
+                padding-left: 49px;
+                font-size: 10px;
                 font-weight: 600;
                 color: #0095f6;
               }
             }
           }
+
+          li:first-of-type {
+            margin-top: 4px;
+          }
+
+          li:last-of-type {
+            margin-bottom: 10px;
+          }
+
+        }
+
+      }
+
+      footer {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        color: gray;
+
+        p:first-of-type {
+          margin-top: 10px;
+          line-height: 15px;
+          letter-spacing: 2px;
+        }
+
+        .copyright {
+          margin-top: 13px;
+          font-size: 11px;
         }
       }
 
