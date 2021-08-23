@@ -242,33 +242,33 @@ a {
 
 
 
-        &__reply {
-          display: flex;
-          align-items: center;
-          font-size: 12px;
-          padding-bottom: 2px;
+        // &__reply {
+        //   display: flex;
+        //   align-items: center;
+        //   font-size: 12px;
+        //   padding-bottom: 2px;
 
-          b {
-            margin-left: -3px;
-            font-weight: 600;
-          }
+        //   b {
+        //     margin-left: -3px;
+        //     font-weight: 600;
+        //   }
 
-          p {
-            margin-left: 5px;
-          }
+        //   p {
+        //     margin-left: 5px;
+        //   }
 
-          .fa-heart {
-            margin-left: auto;
-            margin-right: -10px;
-            color: gray;
-          }
-        }
+        //   .fa-heart {
+        //     margin-left: auto;
+        //     margin-right: -10px;
+        //     color: gray;
+        //   }
+        // }
 
-        &__name {
-          &--others {
-            line-height: 30px;
-          }
-        }
+        // &__name {
+        //   &--others {
+        //     line-height: 30px;
+        //   }
+        // }
       }
 
     }

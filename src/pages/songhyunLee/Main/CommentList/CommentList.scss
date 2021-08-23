@@ -1,0 +1,39 @@
+.icon {
+  display: block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.feeds-comment__list {
+  background-color: burlywood;
+
+  &__reply {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding-bottom: 2px;
+    background-color: blue;
+
+    b {
+      margin-left: -3px;
+      font-weight: 600;
+    }
+
+    p {
+      margin-left: 5px;
+    }
+
+    .fa-heart {
+      margin-left: auto;
+      margin-right: -10px;
+      color: gray;
+    }
+  }
+
+  &__name {
+    &--others {
+      line-height: 30px;
+    }
+  }
+}

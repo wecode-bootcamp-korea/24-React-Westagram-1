@@ -110,9 +110,8 @@ class Main extends Component {
                       <em>위코드에서 인스타그램 클론 코딩하는 중</em>
                       <button>더 보기</button>
                     </p>
-
                     {/* <!-- 더보기 누른 후 댓글 --> */}
-                    <ul className="feeds-comment__list">
+                    {/* <ul className="feeds-comment__list">
                       <li className="feeds-comment__reply">
                         <div className="user-feeds__profile--img">
                           <img src={DogImg} alt="피드사진" />
@@ -121,23 +120,8 @@ class Main extends Component {
                         <p>위워크에서 React 진행중</p>
                         <i className="far fa-heart icon"></i>
                       </li>
-                      <li className="feeds-comment__reply">
-                        <div className="user-feeds__profile--img">
-                          <img src={DogImg} alt="피드사진" />
-                        </div>
-                        <b className="user-feeds__name--others">songsong08</b>
-                        <p>엇 강아지 귀엽다 포메리안 인가 ? 👀 </p>
-                        <i className="far fa-heart icon"></i>
-                      </li>
-                      <li className="feeds-comment__reply">
-                        <div className="user-feeds__profile--img">
-                          <img src={DogImg} alt="피드사진" />
-                        </div>
-                        <b className="user-feeds__name--others">boot_camp24</b>
-                        <p>몽구 오랜만 엄청 컸네 😻</p>
-                        <i className="far fa-heart icon"></i>
-                      </li>
-                    </ul>
+                      <ul> */}
+                    <CommentList />
                   </div>
                 </div>
                 <form className="add-comment">
@@ -288,7 +272,6 @@ class Main extends Component {
           </main>
           {/* <!-- // wrapper --> */}
         </div>
-        <CommentList />
       </>
     );
   }
