@@ -1,0 +1,49 @@
+[
+  {
+    "profile": "k_seung_chan",
+    "comment": "몽구",
+    "comments": [
+      {
+        "id": 1,
+        "userId": "wecode",
+        "text": "Welcome to world best coding bootcamp!"
+      },
+      {
+        "id": 2,
+        "userId": "joonsikyang",
+        "text": "Hi there."
+      },
+      {
+        "id": 3,
+        "userId": "jayPark",
+        "text": "Hey."
+      }
+    ]
+  },
+  {
+    "profile": "seung_chan",
+    "comment": "안녕",
+    "comments": [
+      {
+        "id": 1,
+        "userId": "승찬",
+        "text": "22"
+      },
+      {
+        "id": 2,
+        "userId": "연옥",
+        "text": "33"
+      },
+      {
+        "id": 3,
+        "userId": "보배",
+        "text": "44"
+      }
+    ]
+  },
+  {
+    "profile": "seung_chan",
+    "comment": "안녕",
+    "comments": []
+  }
+]

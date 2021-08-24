@@ -37,20 +37,37 @@ class MainCommet extends React.Component {
             </div>
             <div className="like">{this.props.likeCounter}</div>
             <div className="qa">
-              <div className="kscname">k_seung_chan</div>
-              <div className="dogname">몽구</div>
+              <div className="kscname">{this.props.profile}</div>
+              <div className="dogname">{this.props.feeds}</div>
             </div>
             <div className="qa_layout">
               <div className="qa_layout_1">
-                <div
-                  className="qa_push_line"
-                  onClick={this.props.removeComment}
-                >
+                <div className="qa_push_line">
+                  {this.props.comments.map(b => {
+                    return (
+                      <div className="qa_layout_2" key={b.id}>
+                        <span className="qa_name">{b.userId}</span>
+                        <span className="qa_hello">{b.text}</span>
+                        <div
+                          className="qa_remove"
+                          onClick={() => this.props.removeComment(b.id)}
+                        >
+                          X
+                        </div>
+                      </div>
+                    );
+                  })}
                   {this.props.commentList.map(a => {
                     return (
                       <div className="qa_layout_2" key={a.id}>
                         <span className="qa_name">{a.userId}</span>
                         <span className="qa_hello">{a.text}</span>
+                        <div
+                          className="qa_remove"
+                          onClick={() => this.props.removeComment(a.id)}
+                        >
+                          X
+                        </div>
                       </div>
                     );
                   })}

@@ -459,3 +459,16 @@ nav {
   margin-left: 440px;
   font-size: 12px;
 }
+
+.qa_remove {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 13px;
+  color: rgb(142, 142, 142);
+  cursor: pointer;
+  display: none;
+}
+
+.qa_layout_2:hover > .qa_remove {
+  display: inline-block;
+}

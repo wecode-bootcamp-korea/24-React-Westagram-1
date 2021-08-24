@@ -7,11 +7,23 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      feedArr: [],
       commentList: [],
       commentValue: '',
       like: 'far fa-heart',
       likeCounter: '좋아요 41개',
     };
+  }
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData_seungchan.json', {
+      method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
+    }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedArr: data,
+        });
+      });
   }
 
   removeComment = id => {
@@ -54,6 +66,7 @@ class Main extends React.Component {
       commentValue: '',
     });
   };
+
   render() {
     return (
       <>
@@ -130,16 +143,22 @@ class Main extends React.Component {
                   </li>
                 </ul>
               </div>
-              <MainCommet
-                commentList={this.state.commentList}
-                commentValue={this.state.commentValue}
-                like={this.state.like}
-                likeCounter={this.state.likeCounter}
-                getInputValue={this.getInputValue}
-                addComment={this.addComment}
-                addLikeCount={this.addLikeCount}
-                removeComment={this.removeComment}
-              />
+              {this.state.feedArr.map(feed => {
+                return (
+                  <MainCommet
+                    profile={feed.profile}
+                    feeds={feed.comment}
+                    comments={feed.comments}
+                    commentList={this.state.commentList}
+                    like={this.state.like}
+                    likeCounter={this.state.likeCounter}
+                    getInputValue={this.getInputValue}
+                    addComment={this.addComment}
+                    addLikeCount={this.addLikeCount}
+                    removeComment={this.removeComment}
+                  />
+                );
+              })}
             </div>
             <div id="container_2">
               <div id="nickname">
