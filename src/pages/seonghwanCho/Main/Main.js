@@ -4,15 +4,30 @@ import Nav from '../../../components/Nav/Nav';
 import ArticleStory from '../../../components/seonghwanCho/ArticleStory';
 // import ArticleContent from './MainComponent/ArticleContent';
 import SidebarRecomUser from '../../../components/seonghwanCho/SidebarRecomUser';
+import AddCommentList from '../../../components/seonghwanCho/AddCommentList';
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
       commentValue: '',
-      commentData: [],
+      commentList: [],
     };
   }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData_seonghwan.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
+
+  addCommentList = () => {
+    this.state.commentData.push(this.state.commentValue);
+  };
 
   render() {
     return (
@@ -22,12 +37,6 @@ class Main extends Component {
           <div className="article">
             <article>
               <ul className="articleStory">
-                <ArticleStory />
-                <ArticleStory />
-                <ArticleStory />
-                <ArticleStory />
-                <ArticleStory />
-                <ArticleStory />
                 <ArticleStory />
                 <ArticleStory />
               </ul>
@@ -101,34 +110,15 @@ class Main extends Component {
                 </div>
                 <div>20분 전</div>
                 <div className="commentWindow">
-                  <p className="commentBox">
-                    <span>
-                      <span className="commentId"></span>
-                      <span className="commentContent">{this.commentData}</span>
-                    </span>
-                    <span className="commentLikeBtn"></span>
-                  </p>
+                  <AddCommentList COMMENT_DATA={this.state.commentList} />
                 </div>
                 <div className="commentBar">
                   <input
                     type="text"
                     placeholder="댓글 달기..."
                     className="commentBarContent"
-                    onChange={e => {
-                      this.setState({
-                        commentValue: e.target.value,
-                      });
-                    }}
                   />
-                  <button
-                    className="commentBarPostbtn"
-                    onClick={e => {
-                      this.state.commentData.push(this.state.commentValue);
-                      this.addComment();
-                    }}
-                  >
-                    게시
-                  </button>
+                  <button className="commentBarPostbtn">게시</button>
                 </div>
               </div>
             </article>
