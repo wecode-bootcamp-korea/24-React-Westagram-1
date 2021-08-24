@@ -131,6 +131,7 @@ class Feeds extends Component {
               <span className="bold">wecode_bootcamp님 외 100명</span>이
               좋아합니다
             </div>
+
             <div className="feed-text_contents">
               <span className="accountName">hayeonsoo_</span>
               <span>{this.props.feedsContents.feedsContents}</span>
@@ -140,10 +141,11 @@ class Feeds extends Component {
               <span>7분 전</span>
             </div>
             <ul>
-              {this.props.comments.map(comment => {
-                return <Comment comment={comment} />;
+              {this.props.comments.map(x => {
+                return <Comment comment={x} />;
               })}
             </ul>
+
             <div className="feeds-comment">
               <input
                 onChange={this.getComment}
@@ -152,6 +154,7 @@ class Feeds extends Component {
                 placeholder="댓글 달기..."
                 className="feeds-comment_box"
               />
+
               <button
                 onClick={this.createComment}
                 className="feeds-comment_btn"

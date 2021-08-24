@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
-import '../../../components/Nav/Nav.scss';
-import Comment from '../../../components/dongheeKim/comment';
 import Feeds from '../../../components/dongheeKim/feeds';
+import Comment from '../../../components/dongheeKim/comment';
+import '../../../components/Nav/Nav.scss';
+import './Main.scss';
 
 class MainDonghee extends Component {
   constructor() {
     super();
     this.state = {
-      // value: '',
-      // commentUser: '',
-      // commentList: [],
       feeds: [],
     };
   }
@@ -59,7 +56,6 @@ class MainDonghee extends Component {
         <main>
           <div className="feeds-wrap">
             {this.state.feeds.map(feed => {
-              console.log(feed.comments);
               return <Feeds comments={feed.comments} feedsContents={feed} />;
             })}
           </div>
