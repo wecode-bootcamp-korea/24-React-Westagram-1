@@ -14,8 +14,7 @@
   height: 320px;
   top: 50%;
   left: 50%;
-  margin-top: -160px;
-  margin-left: -150px;
+  transform: translate(-50%, -50%);
   border: lightgray 1px solid;
 
   .logo {
