@@ -10,14 +10,14 @@
     "id": 2,
     "userName": "joonsikyang",
     "content": "Hi there.",
-    "profile":"",
+    "profile":"https://i.postimg.cc/9FrDnzk4/image.png",
     "isLiked": false
   },
   {
     "id": 3,
     "userName": "jayPark",
     "content": "Hey.",
-    "profile":"",
+    "profile":"https://i.postimg.cc/SKknbzzV/wecode.png",
     "isLiked": false
   }
 ]

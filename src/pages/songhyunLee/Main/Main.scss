@@ -1,4 +1,3 @@
-// 공통
 .ir_pm {
   display: block;
   line-height: 0;
@@ -19,7 +18,7 @@ a {
   color: black;
 }
 
-.wrapper {
+.main-wrapper {
   font-family: sans-serif;
 
   nav {
@@ -42,7 +41,7 @@ a {
         font-size: 33px;
       }
 
-      h1 {
+      h2 {
         line-height: 33px;
         padding-left: 10px;
         border-left: 2px solid black;
@@ -52,8 +51,6 @@ a {
       }
 
     }
-
-    // -- #logo
 
     .search-form {
       display: flex;
@@ -240,41 +237,16 @@ a {
           }
         }
 
-
-
-        // &__reply {
-        //   display: flex;
-        //   align-items: center;
-        //   font-size: 12px;
-        //   padding-bottom: 2px;
-
-        //   b {
-        //     margin-left: -3px;
-        //     font-weight: 600;
-        //   }
-
-        //   p {
-        //     margin-left: 5px;
-        //   }
-
-        //   .fa-heart {
-        //     margin-left: auto;
-        //     margin-right: -10px;
-        //     color: gray;
-        //   }
-        // }
-
-        // &__name {
-        //   &--others {
-        //     line-height: 30px;
-        //   }
-        // }
+        &__name {
+          &--others {
+            line-height: 30px;
+          }
+        }
       }
 
     }
 
     // --feeds-icons
-    // --feeds-comment
     .add-comment {
       display: flex;
       padding: 10px 0;
@@ -303,7 +275,6 @@ a {
     }
 
     // -- add-comment
-    // 여기서 부터 작업
     .main-right {
       margin-top: 33px;
 
@@ -388,7 +359,7 @@ a {
                 strong {
                   display: flex;
                   flex-direction: column;
-                  margin: 12px 10px 6px 7px;
+                  margin: 8px 0 6px 7px;
                   font-size: 11px;
                   font-weight: 600;
                 }

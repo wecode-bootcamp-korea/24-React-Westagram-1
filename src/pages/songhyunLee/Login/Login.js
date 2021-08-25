@@ -22,7 +22,7 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.validation();
+    this.handleValidate();
 
     // back-end data
     // await submitApi.post();
@@ -33,7 +33,7 @@ class Login extends Component {
   };
 
   // handleValidate, validation - 유효성 검사는 따로해서 상태 값을 변경.
-  validation = () => {
+  handleValidate = () => {
     const { id, pwd } = this.state;
     this.setState({ validation: id.includes('@') && pwd.length >= 5 });
   };
