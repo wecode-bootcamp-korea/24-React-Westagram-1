@@ -1,7 +1,59 @@
 import React from 'react';
 import '../../pages/seungchanKim/Main/main.scss';
+import CommentList from './CommentList';
 
 class MainCommet extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      commentList: [],
+      commentValue: '',
+      like: 'far fa-heart',
+      likeCounter: '좋아요 41개',
+    };
+  }
+
+  removeComment = id => {
+    const filteredComments = this.state.commentList.filter(
+      comment => comment.id !== id
+    );
+    this.setState({ commentList: filteredComments });
+  };
+
+  addLikeCount = () => {
+    if (this.state.like == 'far fa-heart') {
+      this.setState({
+        like: 'fas fa-heart',
+        likeCounter: '좋아요 42개',
+      });
+    } else if (this.state.like == 'fas fa-heart') {
+      this.setState({
+        like: 'far fa-heart',
+        likeCounter: '좋아요 41개',
+      });
+    }
+  };
+
+  getInputValue = e => {
+    this.setState({
+      commentValue: e.target.value,
+    });
+  };
+
+  addComment = e => {
+    e.preventDefault();
+    const { commentList } = this.state;
+    const newComment = {
+      id: commentList.length + 1,
+      userId: 'K_seung_chan',
+      text: this.state.commentValue,
+    };
+    this.setState({
+      commentList: [...commentList, newComment],
+      commentValue: '',
+    });
+  };
+
   render() {
     return (
       <>
@@ -24,10 +76,7 @@ class MainCommet extends React.Component {
           <div id="main_content">
             <div id="many_icon">
               <div className="icon">
-                <i
-                  className={this.props.like}
-                  onClick={this.props.addLikeCount}
-                ></i>
+                <i className={this.state.like} onClick={this.addLikeCount}></i>
                 <i className="far fa-comment"></i>
                 <i className="far fa-paper-plane"></i>
               </div>
@@ -35,7 +84,7 @@ class MainCommet extends React.Component {
                 <i className="far fa-bookmark"></i>
               </div>
             </div>
-            <div className="like">{this.props.likeCounter}</div>
+            <div className="like">{this.state.likeCounter}</div>
             <div className="qa">
               <div className="kscname">{this.props.profile}</div>
               <div className="dogname">{this.props.feeds}</div>
@@ -48,29 +97,13 @@ class MainCommet extends React.Component {
                       <div className="qa_layout_2" key={b.id}>
                         <span className="qa_name">{b.userId}</span>
                         <span className="qa_hello">{b.text}</span>
-                        <div
-                          className="qa_remove"
-                          onClick={() => this.props.removeComment(b.id)}
-                        >
-                          X
-                        </div>
                       </div>
                     );
                   })}
-                  {this.props.commentList.map(a => {
-                    return (
-                      <div className="qa_layout_2" key={a.id}>
-                        <span className="qa_name">{a.userId}</span>
-                        <span className="qa_hello">{a.text}</span>
-                        <div
-                          className="qa_remove"
-                          onClick={() => this.props.removeComment(a.id)}
-                        >
-                          X
-                        </div>
-                      </div>
-                    );
-                  })}
+                  <CommentList
+                    commentList={this.state.commentList}
+                    removeComment={this.removeComment}
+                  />
                 </div>
               </div>
             </div>
@@ -82,14 +115,10 @@ class MainCommet extends React.Component {
               type="text"
               placeholder="댓글 달기..."
               id="main_input_1"
-              value={this.props.commentValue}
-              onChange={this.props.getInputValue}
+              value={this.state.commentValue}
+              onChange={this.getInputValue}
             />
-            <button
-              type="submit"
-              id="text_push"
-              onClick={this.props.addComment}
-            >
+            <button type="submit" id="text_push" onClick={this.addComment}>
               게시
             </button>
           </form>

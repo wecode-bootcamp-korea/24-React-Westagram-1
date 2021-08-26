@@ -10,10 +10,6 @@ class Main extends React.Component {
     super(props);
     this.state = {
       feedArr: [],
-      commentList: [],
-      commentValue: '',
-      like: 'far fa-heart',
-      likeCounter: '좋아요 41개',
     };
   }
   componentDidMount() {
@@ -27,47 +23,6 @@ class Main extends React.Component {
         });
       });
   }
-
-  removeComment = id => {
-    const filteredComments = this.state.commentList.filter(
-      comment => comment.id !== id
-    );
-    this.setState({ commentList: filteredComments });
-  };
-
-  addLikeCount = () => {
-    if (this.state.like == 'far fa-heart') {
-      this.setState({
-        like: 'fas fa-heart',
-        likeCounter: '좋아요 42개',
-      });
-    } else if (this.state.like == 'fas fa-heart') {
-      this.setState({
-        like: 'far fa-heart',
-        likeCounter: '좋아요 41개',
-      });
-    }
-  };
-
-  getInputValue = e => {
-    this.setState({
-      commentValue: e.target.value,
-    });
-  };
-
-  addComment = e => {
-    e.preventDefault();
-    const { commentList } = this.state;
-    const newComment = {
-      id: commentList.length + 1,
-      userId: 'K_seung_chan',
-      text: this.state.commentValue,
-    };
-    this.setState({
-      commentList: [...commentList, newComment],
-      commentValue: '',
-    });
-  };
 
   render() {
     return (
@@ -87,18 +42,12 @@ class Main extends React.Component {
             <div id="container_1">
               <Story />
               {this.state.feedArr.map(feed => {
+                console.log(feed);
                 return (
                   <MainCommet
                     profile={feed.profile}
                     feeds={feed.comment}
                     comments={feed.comments}
-                    commentList={this.state.commentList}
-                    like={this.state.like}
-                    likeCounter={this.state.likeCounter}
-                    getInputValue={this.getInputValue}
-                    addComment={this.addComment}
-                    addLikeCount={this.addLikeCount}
-                    removeComment={this.removeComment}
                   />
                 );
               })}
