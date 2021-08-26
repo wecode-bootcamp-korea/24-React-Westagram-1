@@ -12,9 +12,14 @@ class Comment extends Component {
           <span className="heart">
             <i className="far fa-heart"></i>
           </span>
-          <span className="delete">
+          <i
+            onClick={() => {
+              this.props.deleteComment(this.props.comment);
+            }}
+            className="delete"
+          >
             <i className="far fa-trash-alt"></i>
-          </span>
+          </i>
         </div>
       </li>
     );
