@@ -56,7 +56,13 @@ class MainDonghee extends Component {
         <main>
           <div className="feeds-wrap">
             {this.state.feeds.map(feed => {
-              return <Feeds comments={feed.comments} feedsContents={feed} />;
+              return (
+                <Feeds
+                  key={feed.id}
+                  comments={feed.comments}
+                  feedsContents={feed}
+                />
+              );
             })}
           </div>
           <div className="profile">

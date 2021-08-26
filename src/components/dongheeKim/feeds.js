@@ -27,9 +27,6 @@ class Feeds extends Component {
       feed: { comments: this.state.feed.comments.concat(comment) },
       value: '',
     });
-
-    // var input = document.getElementsByClassName('feeds-comment_box')[0];
-    // input.value = null;
   };
 
   createCommentEnter = e => {
@@ -178,7 +175,7 @@ class Feeds extends Component {
             </div>
             <ul>
               {this.state.feed.comments.map(item => {
-                return <Comment comment={item} />;
+                return <Comment comment={item} key={item.id} />;
               })}
             </ul>
 
