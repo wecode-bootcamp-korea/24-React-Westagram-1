@@ -2,6 +2,42 @@ import React, { Component } from 'react';
 import Comment from './comment';
 
 class Feeds extends Component {
+  constructor(feed) {
+    super();
+    this.state = {
+      feed,
+      value: '',
+    };
+  }
+
+  getComment = event => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
+
+  createComment = e => {
+    const comment = {
+      id: Date.now(),
+      accountName: 'donghee',
+      comment: this.state.value,
+    };
+
+    this.setState({
+      feed: { comments: this.state.feed.comments.concat(comment) },
+      value: '',
+    });
+
+    // var input = document.getElementsByClassName('feeds-comment_box')[0];
+    // input.value = null;
+  };
+
+  createCommentEnter = e => {
+    if (e.key === 'Enter') {
+      this.createComment();
+    }
+  };
+
   render() {
     return (
       <div className="feeds">
@@ -141,8 +177,8 @@ class Feeds extends Component {
               <span>7분 전</span>
             </div>
             <ul>
-              {this.props.comments.map(x => {
-                return <Comment comment={x} />;
+              {this.state.feed.comments.map(item => {
+                return <Comment comment={item} />;
               })}
             </ul>
 
@@ -153,6 +189,7 @@ class Feeds extends Component {
                 type="text"
                 placeholder="댓글 달기..."
                 className="feeds-comment_box"
+                value={this.state.value}
               />
 
               <button

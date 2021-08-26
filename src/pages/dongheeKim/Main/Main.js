@@ -23,31 +23,31 @@ class MainDonghee extends Component {
       });
   }
 
-  getComment = event => {
-    this.setState({
-      value: event.target.value,
-    });
-  };
+  // getComment = event => {
+  //   this.setState({
+  //     value: event.target.value,
+  //   });
+  // };
 
-  createComment = e => {
-    const comment = {
-      idx: Date.now(),
-      accountName: 'donghee',
-      commentInput: this.state.value,
-    };
+  // createComment = e => {
+  //   const comment = {
+  //     idx: Date.now(),
+  //     accountName: 'donghee',
+  //     commentInput: this.state.value,
+  //   };
 
-    this.setState({
-      commentList: this.state.commentList.concat(comment),
-    });
-    var input = document.getElementsByClassName('feeds-comment_box')[0];
-    input.value = null;
-  };
+  //   this.setState({
+  //     commentList: this.state.commentList.concat(comment),
+  //   });
+  //   var input = document.getElementsByClassName('feeds-comment_box')[0];
+  //   input.value = null;
+  // };
 
-  createCommentEnter = e => {
-    if (e.key === 'Enter') {
-      this.createComment();
-    }
-  };
+  // createCommentEnter = e => {
+  //   if (e.key === 'Enter') {
+  //     this.createComment();
+  //   }
+  // };
 
   render() {
     return (
