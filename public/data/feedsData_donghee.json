@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "feedsContents": "귀여워!",
+    "comments": [
+      {
+        "id": 1,
+        "accountName": "현재님",
+        "comment": "안녕하세요!"
+      },
+      {
+        "id": 2,
+        "accountName": "철진님",
+        "comment": "오히려 좋아"
+      },
+      {
+        "id": 3,
+        "accountName": "영현님",
+        "comment": "동희님이 싫어요!"
+      },
+      {
+        "id": 4,
+        "accountName": "무현님",
+        "comment": "저 인사 안하고 집에 갈거에요."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "feedsContents": "이쁘다!",
+    "comments": [
+      {
+        "id": 1,
+        "accountName": "승찬님",
+        "comment": "넵"
+      },
+      {
+        "id": 2,
+        "accountName": "성환님",
+        "comment": "셀프 칭찬을 좋아합니다."
+      },
+      {
+        "id": 3,
+        "accountName": "치헌님",
+        "comment": "성공적인 프론트와 백이 만나서 너무 기쁩니다"
+      },
+      {
+        "id": 4,
+        "accountName": "연우님",
+        "comment": "킥오프 기다리셨죠?"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "feedsContents": "깜찍해!",
+    "comments": [
+      {
+        "id": 1,
+        "accountName": "경훈님",
+        "comment": "노트북 잘 쓰고 계시나요?"
+      },
+      {
+        "id": 2,
+        "accountName": "연우님",
+        "comment": "안녕하세요~"
+      },
+      {
+        "id": 3,
+        "accountName": "아름님",
+        "comment": "메모.."
+      },
+      {
+        "id": 4,
+        "accountName": "연욱님",
+        "comment": "구조분해할당이 중요합니다"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "feedsContents": "사랑스러워!",
+    "comments": [
+      {
+        "id": 1,
+        "accountName": "donghee",
+        "comment": "드디어"
+      },
+      {
+        "id": 2,
+        "accountName": "donghee",
+        "comment": "완성했다!"
+      },
+      {
+        "id": 3,
+        "accountName": "donghee",
+        "comment": "너무너무"
+      },
+      {
+        "id": 4,
+        "accountName": "donghee",
+        "comment": "기쁘다ㅠㅠ"
+      }
+    ]
+  }
+]
