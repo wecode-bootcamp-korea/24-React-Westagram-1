@@ -1,9 +1,9 @@
 import React from 'react';
-import '../Main/main.scss';
 import Nav from '../../../components/Nav/Nav';
 import MainCommet from '../../../components/seungchanKim/MainCommet';
 import Story from '../../../components/seungchanKim/Story';
 import Aside from '../../../components/seungchanKim/Aside';
+import '../Main/main.scss';
 
 class Main extends React.Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class Main extends React.Component {
   }
 
   render() {
+    const { feedArr } = this.state;
     return (
       <>
         <div>
@@ -41,8 +42,7 @@ class Main extends React.Component {
           <main>
             <div id="container_1">
               <Story />
-              {this.state.feedArr.map(feed => {
-                console.log(feed);
+              {feedArr.map(feed => {
                 return (
                   <MainCommet
                     profile={feed.profile}

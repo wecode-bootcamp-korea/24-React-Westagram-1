@@ -2,17 +2,15 @@ import React, { Component } from 'react';
 
 class CommentList extends Component {
   render() {
+    const { commentList, removeComment } = this.props;
     return (
       <>
-        {this.props.commentList.map(a => {
+        {commentList.map(a => {
           return (
             <div className="qa_layout_2" key={a.id}>
               <span className="qa_name">{a.userId}</span>
               <span className="qa_hello">{a.text}</span>
-              <div
-                className="qa_remove"
-                onClick={() => this.props.removeComment(a.id)}
-              >
+              <div className="qa_remove" onClick={() => removeComment(a.id)}>
                 X
               </div>
             </div>

@@ -9,7 +9,7 @@ class MainCommet extends React.Component {
       commentList: [],
       commentValue: '',
       like: 'far fa-heart',
-      likeCounter: '좋아요 41개',
+      likeCounter: '좋아요 41개', //원래는 counter 처리 보여주기 위해서 이렇게 처리함
     };
   }
 
@@ -55,6 +55,8 @@ class MainCommet extends React.Component {
   };
 
   render() {
+    const { commentList, commentValue, like, likeCounter } = this.state;
+    const { profile, feeds, comments } = this.props;
     return (
       <>
         <div id="self_main">
@@ -76,7 +78,7 @@ class MainCommet extends React.Component {
           <div id="main_content">
             <div id="many_icon">
               <div className="icon">
-                <i className={this.state.like} onClick={this.addLikeCount}></i>
+                <i className={like} onClick={this.addLikeCount}></i>
                 <i className="far fa-comment"></i>
                 <i className="far fa-paper-plane"></i>
               </div>
@@ -84,15 +86,15 @@ class MainCommet extends React.Component {
                 <i className="far fa-bookmark"></i>
               </div>
             </div>
-            <div className="like">{this.state.likeCounter}</div>
+            <div className="like">{likeCounter}</div>
             <div className="qa">
-              <div className="kscname">{this.props.profile}</div>
-              <div className="dogname">{this.props.feeds}</div>
+              <div className="kscname">{profile}</div>
+              <div className="dogname">{feeds}</div>
             </div>
             <div className="qa_layout">
               <div className="qa_layout_1">
                 <div className="qa_push_line">
-                  {this.props.comments.map(b => {
+                  {comments.map(b => {
                     return (
                       <div className="qa_layout_2" key={b.id}>
                         <span className="qa_name">{b.userId}</span>
@@ -101,7 +103,7 @@ class MainCommet extends React.Component {
                     );
                   })}
                   <CommentList
-                    commentList={this.state.commentList}
+                    commentList={commentList}
                     removeComment={this.removeComment}
                   />
                 </div>
@@ -115,7 +117,7 @@ class MainCommet extends React.Component {
               type="text"
               placeholder="댓글 달기..."
               id="main_input_1"
-              value={this.state.commentValue}
+              value={commentValue}
               onChange={this.getInputValue}
             />
             <button type="submit" id="text_push" onClick={this.addComment}>

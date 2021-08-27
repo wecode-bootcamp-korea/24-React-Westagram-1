@@ -63,7 +63,7 @@ class LoginMain extends React.Component {
     }
   };
 
-  pwfontSize = () => {
+  pwFontSize = () => {
     if (this.state.pw.length > 0) {
       this.setState({
         pwFontSize: 'placeHoldPwChange',
@@ -106,6 +106,16 @@ class LoginMain extends React.Component {
   };
 
   render() {
+    const {
+      id,
+      pw,
+      buttonChange,
+      idFontSize,
+      pwFontSize,
+      pwLook,
+      type,
+      typeInfo,
+    } = this.state;
     return (
       <div className="login_main">
         <div id="all_layout">
@@ -116,7 +126,7 @@ class LoginMain extends React.Component {
                 <input
                   type="text"
                   id="cs_id"
-                  value={this.state.id}
+                  value={id}
                   onChange={this.handleIdInput}
                   onKeyUp={this.fontSize}
                 />
@@ -132,16 +142,16 @@ class LoginMain extends React.Component {
             >
               <label for="cs_pw">
                 <input
-                  type={this.state.type}
+                  type={type}
                   id="cs_pw"
-                  value={this.state.pw}
+                  value={pw}
                   onChange={this.handlePwInput}
-                  onKeyUp={this.pwfontSize}
+                  onKeyUp={this.pwFontSize}
                 />
-                <span className={this.state.pwFontSize}>비밀번호</span>
+                <span className={pwFontSize}>비밀번호</span>
               </label>
-              <div className={this.state.pwLook} onClick={this.pwClick}>
-                {this.state.typeInfo}
+              <div className={pwLook} onClick={this.pwClick}>
+                {typeInfo}
               </div>
             </div>
             <div
@@ -153,7 +163,7 @@ class LoginMain extends React.Component {
                 <input
                   type="button"
                   value="로그인"
-                  className={this.state.buttonChange}
+                  className={buttonChange}
                   onClick={this.handleLogin}
                 />
               </Link>
