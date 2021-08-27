@@ -10,14 +10,12 @@ class Feeds extends Component {
     };
   }
 
-  //댓글 내용 저장 함수
   getComment = event => {
     this.setState({
       value: event.target.value,
     });
   };
 
-  //버튼으로 댓글 생성 함수
   createComment = e => {
     const comment = {
       id: Date.now(),
@@ -31,17 +29,15 @@ class Feeds extends Component {
     });
   };
 
-  //엔터로 댓글 생성 함수
   createCommentEnter = e => {
     if (e.key === 'Enter') {
       this.createComment();
     }
   };
 
-  //댓글 삭제 함수
   deleteComment = comment => {
     const newComments = this.state.feed.comments.filter(
-      item => item.id !== comment.id
+      deleteComment => deleteComment.id !== comment.id
     );
     this.setState({ feed: { comments: newComments } });
   };
@@ -185,11 +181,11 @@ class Feeds extends Component {
               <span>7분 전</span>
             </div>
             <ul>
-              {this.state.feed.comments.map(item => {
+              {this.state.feed.comments.map(comment => {
                 return (
                   <Comment
-                    comment={item}
-                    key={item.id}
+                    comment={comment}
+                    key={comment.id}
                     deleteComment={this.deleteComment}
                   />
                 );

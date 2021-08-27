@@ -1,22 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-.MainDonghee {
-  div {
-    box-sizing: border-box;
-  }
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
 
+.MainDonghee {
   font: inherit;
   margin: 0;
   background-color: #fafafa;
-
-  /*--- main ---*/
 
   main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
-    /*--- feeds ---*/
 
     .feeds {
       width: 650px;
@@ -31,15 +28,13 @@
         border: lightgray solid 1px;
 
         .feeds-profile {
-          display: flex;
+          @include flex-center;
           justify-content: space-between;
-          align-items: center;
           padding: 0 10px;
 
           .feeds-profile_account {
-            display: flex;
+            @include flex-center;
             padding: 10px 0;
-            align-items: center;
 
             .feeds-profile_account_pic {
               margin-right: 15px;
@@ -74,16 +69,14 @@
         }
 
         .feeds-status {
-          display: flex;
-          align-items: center;
+          @include flex-center;
           justify-content: space-between;
           margin: 10px 20px 0 20px;
 
           .feeds-status-icons {
-            display: flex;
+            @include flex-center;
             height: 100%;
             justify-content: flex-start;
-            align-items: center;
 
             .miniIcon {
               width: 25px;
@@ -181,18 +174,15 @@
       }
     }
 
-    /*--- profile ---*/
-
     .profile {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
 
       .myProfile {
-        display: flex;
+        @include flex-center;
         width: 400px;
         margin-top: 40px;
-        align-items: center;
 
         .myProfile-pic {
           width: 53px;
@@ -220,8 +210,6 @@
           }
         }
       }
-
-      /*--- story ---*/
 
       .story {
         width: 400px;
@@ -254,9 +242,8 @@
         }
 
         .story-account {
-          display: flex;
+          @include flex-center;
           margin-left: 15px;
-          align-items: center;
           margin-bottom: 15px;
 
           .profile_pic {
@@ -298,8 +285,6 @@
         }
       }
 
-      /*--- recommend ---*/
-
       .recommend {
         width: 400px;
         background-color: white;
@@ -325,10 +310,9 @@
         }
 
         .recommend-wrap {
-          display: flex;
+          @include flex-center;
           margin: 0 15px 15px 15px;
           justify-content: space-between;
-          align-items: center;
 
           .font-blue {
             color: rgba(var(--d69, 0, 149, 246), 1);
@@ -378,8 +362,6 @@
           }
         }
       }
-
-      /*--- info ---*/
 
       .info {
         width: 300px;

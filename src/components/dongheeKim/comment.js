@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Comment extends Component {
+  deleteComment = () => {
+    this.props.deleteComment(this.props.comment);
+  };
+
   render() {
     return (
       <li>
@@ -12,12 +16,7 @@ class Comment extends Component {
           <span className="heart">
             <i className="far fa-heart"></i>
           </span>
-          <i
-            onClick={() => {
-              this.props.deleteComment(this.props.comment);
-            }}
-            className="delete"
-          >
+          <i onClick={this.deleteComment} className="delete">
             <i className="far fa-trash-alt"></i>
           </i>
         </div>

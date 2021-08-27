@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "profilename": "wecode",
+    "minutes": "3분"
+  },
+  {
+    "id": 2,
+    "profilename": "wecode_bootcamp",
+    "minutes": "5분"
+  },
+  {
+    "id": 3,
+    "profilename": "Icode",
+    "minutes": "7분"
+  },
+  {
+    "id": 4,
+    "profilename": "Ourcode",
+    "minutes": "10분"
+  }
+]

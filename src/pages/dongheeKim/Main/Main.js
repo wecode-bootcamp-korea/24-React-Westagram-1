@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Feeds from '../../../components/dongheeKim/feeds';
 import Comment from '../../../components/dongheeKim/comment';
+import StoryAccount from '../../../components/dongheeKim/storyaccount';
 import '../../../components/Nav/Nav.scss';
 import './Main.scss';
 
@@ -10,6 +11,7 @@ class MainDonghee extends Component {
     super();
     this.state = {
       feeds: [],
+      storyaccounts: [],
     };
   }
 
@@ -19,6 +21,14 @@ class MainDonghee extends Component {
       .then(data => {
         this.setState({
           feeds: data,
+        });
+      });
+
+    fetch('http://localhost:3000/data/storyAccountData_donghee.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          storyaccounts: data,
         });
       });
   }
@@ -57,35 +67,15 @@ class MainDonghee extends Component {
                 <span className="bold">모두보기</span>
               </div>
 
-              <div className="story-account">
-                <div className="story_pic1 profile_pic"></div>
-
-                <div className="profilename">
-                  <span className="bold">wecode_bootcamp</span>
-
-                  <span className="font-gray">5분 전</span>
-                </div>
-              </div>
-
-              <div className="story-account">
-                <div className="story_pic2 profile_pic"></div>
-
-                <div className="profilename">
-                  <span className="bold">kimyk10</span>
-
-                  <span className="font-gray">10분 전</span>
-                </div>
-              </div>
-
-              <div className="story-account">
-                <div className="story_pic3 profile_pic"></div>
-
-                <div className="profilename">
-                  <span className="bold">songkang_b</span>
-
-                  <span className="font-gray">30분 전</span>
-                </div>
-              </div>
+              {this.state.storyaccounts.map(account => {
+                return (
+                  <StoryAccount
+                    key={account.id}
+                    profilename={account.profilename}
+                    minutes={account.minutes}
+                  />
+                );
+              })}
             </div>
 
             <div className="recommend">

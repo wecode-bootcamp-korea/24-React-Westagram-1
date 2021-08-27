@@ -1,21 +1,21 @@
 [
   {
-    "idx": 1,
+    "id": 1,
     "accountName": "현재",
     "commentInput": "안녕하세요"
   },
   {
-    "idx": 2,
+    "id": 2,
     "accountName": "철진",
     "commentInput": "오히려좋아"
   },
   {
-    "idx": 3,
+    "id": 3,
     "accountName": "무현",
     "commentInput": "오늘 몇시에 가실거에요?"
   },
   {
-    "idx": 4,
+    "id": 4,
     "accountName": "영현",
     "commentInput": "간식 드실래요?"
   }
