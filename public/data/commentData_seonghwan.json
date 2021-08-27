@@ -1,0 +1,86 @@
+[
+  {
+    "feedId": 1,
+    "feedUserName": "choseonghwan",
+    "feedUserImage": "/images/seonghwanCho/profile.jpeg",
+    "feedContentImage": "/images/seonghwanCho/wecode24_1.jpg",
+    "feedLike": true,
+    "feedBookMark": true,
+    "feedComment": [
+      {
+        "commentId": 1,
+        "commentUserName": "wecode",
+        "commentContent": "Welcome to world best coding bootcamp!",
+        "commentIsLiked": true
+      },
+      {
+        "commentId": 2,
+        "commentUserName": "joonsikyang",
+        "commentContent": "Hi there.",
+        "commentIsLiked": false
+      },
+      {
+        "commentId": 3,
+        "commentUserName": "jayPark",
+        "commentContent": "Hey.",
+        "commentIsLiked": false
+      }
+    ]
+  },
+  {
+    "feedId": 2,
+    "feedUserName": "choseonghwan",
+    "feedUserImage": "/images/seonghwanCho/profile.jpeg",
+    "feedContentImage": "/images/seonghwanCho/wecode24_1.jpg",
+    "feedLike": true,
+    "feedBookMark": true,
+    "feedComment": [
+      {
+        "commentId": 1,
+        "commentUserName": "wecode",
+        "commentContent": "Welcome to world best coding bootcamp!",
+        "commentIsLiked": true
+      },
+      {
+        "commentId": 2,
+        "commentUserName": "joonsikyang",
+        "commentContent": "Hi there.",
+        "commentIsLiked": false
+      },
+      {
+        "commentId": 3,
+        "commentUserName": "jayPark",
+        "commentContent": "Hey.",
+        "commentIsLiked": false
+      }
+    ]
+  },
+  {
+    "feedId": 3,
+    "feedUserName": "choseonghwan",
+    "feedUserImage": "/images/seonghwanCho/profile.jpeg",
+    "feedContentImage": "/images/seonghwanCho/wecode24_1.jpg",
+    "feedLike": true,
+    "feedBookMark": true,
+    "feedComment": [
+      {
+        "commentId": 1,
+        "commentUserName": "wecode",
+        "commentContent": "Welcome to world best coding bootcamp!",
+        "commentIsLiked": true
+      },
+      {
+        "commentId": 2,
+        "commentUserName": "joonsikyang",
+        "commentContent": "Hi there.",
+        "commentIsLiked": false
+      },
+      {
+        "commentId": 3,
+        "commentUserName": "jayPark",
+        "commentContent": "Hey.",
+        "commentIsLiked": false
+      }
+    ]
+  }
+]

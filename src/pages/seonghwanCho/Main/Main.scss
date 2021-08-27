@@ -1,0 +1,211 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  margin: 0px auto;
+  background-color: #fafafa;
+  box-sizing: border-box;
+
+  main {
+    display: flex;
+    justify-content: center;
+
+    .article {
+      width: 600px;
+      margin-top: 60px;
+      margin-right: 300px;
+
+      article {
+        margin-bottom: 30px;
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+
+        .articleStory {
+          display: flex;
+          margin-left: 10px;
+          overflow: hidden;
+
+          li {
+            margin: 10px;
+            list-style: none;
+
+            img {
+              width: 54px;
+              border-radius: 36px;
+            }
+          }
+        }
+
+        .articleProfile {
+          display: flex;
+          align-items: center;
+          margin: 10px;
+
+          .articleUserImage {
+            margin: 0px 15px;
+
+            #articleProfileImage {
+              width: 30px;
+              border-radius: 20px;
+            }
+          }
+
+          .articleViewMore {
+            margin-right: 15px;
+            margin-left: auto;
+          }
+        }
+
+        .articleImage {
+          width: 600px;
+        }
+
+        .articleMenuBar {
+          display: flex;
+          justify-content: space-between;
+
+          .articleMenuList {
+            display: flex;
+            margin: 5px;
+            font-size: 25px;
+            list-style: none;
+
+            li {
+              margin: 0px 10px;
+            }
+          }
+        }
+
+        .likeBar {
+          display: flex;
+          align-items: center;
+          margin: 0px 15px;
+
+          #userLikebarImage {
+            width: 20px;
+            border-radius: 15px;
+            margin-right: 5px;
+          }
+        }
+
+        .descriptionBar {
+          margin: 5px 15px;
+
+          .commentBox {
+            display: flex;
+            justify-content: space-between;
+            margin: 3px;
+
+            .commentId {
+              margin-right: 10px;
+              font-weight: 700;
+            }
+
+            .commentContent {
+              font-size: 15px;
+              overflow: hidden;
+            }
+
+            .commentLikeBtnOn {
+              color: red;
+            }
+          }
+
+          .commentBar {
+            padding: 30px 0px;
+            border-top: 1px solid #e6e6e6;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+
+            .commentBarContent {
+              border: none;
+              font-size: 15px;
+              outline: none;
+            }
+
+            .commentBarPostbtn {
+              border: none;
+              color: #2196f3;
+              background-color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    aside {
+      .sideBar {
+        width: 300px;
+        margin: 60px 20px 0px -280px;
+        position: fixed;
+        top: 60px;
+
+        .sideBarUser {
+          display: flex;
+          align-items: center;
+
+          #sideBarUserImage {
+            width: 45px;
+            border-radius: 30px;
+            margin-right: 15px;
+          }
+        }
+
+        .sideBarRecommen {
+          margin-top: 15px;
+
+          .sideBarRecommenTop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+
+            .sideBarRecommenTopGr {
+              font-size: 15px;
+              color: #8e8e8e;
+            }
+
+            .sideBarRecommenTopVm {
+              a {
+                font-size: 13px;
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+
+          .sideBarRecommenMain {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 10px 0px 0px;
+
+            #sideBarRecommenUserImage {
+              width: 30px;
+              border-radius: 20px;
+              margin: 2px 10px 2px 15px;
+            }
+
+            .sideBarRecommenUserProfile {
+              width: 190px;
+            }
+
+            .sideBarRecommenUserfollow {
+              color: #2196f3;
+            }
+          }
+        }
+      }
+
+      .footerLink {
+        a {
+          text-decoration: none;
+          font-size: 12px;
+          color: #d0d0d0;
+        }
+      }
+    }
+  }
+}
