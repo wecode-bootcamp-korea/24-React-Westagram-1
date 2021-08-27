@@ -1,16 +1,38 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './Login.scss';
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputId: '',
-      inputPw: '',
+      name: '',
+      email: '',
+      password: '',
+      phone: '',
+      nickname: '',
       loginBtnClass: 'loginBtn',
     };
   }
+
+  loginfetch = () => {
+    fetch('http://10.58.3.80:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.message === 'INVALID_USER') {
+          alert('아이디 또는 비밀번호가 맞지 않습니다.');
+        } else if (response.message === 'SUCCESS') {
+          this.props.history.push('/main-seong/');
+        }
+        console.log(response);
+      });
+  };
 
   render() {
     return (
@@ -22,12 +44,12 @@ class Login extends Component {
               <div>
                 <input
                   type="text"
-                  placeholder="전화번호, 사용자 이름 또는 이메일"
+                  placeholder="이메일"
                   className="inputBox"
                   id="inputEmail"
                   onChange={e => {
                     this.setState({
-                      inputId: e.target.value,
+                      email: e.target.value,
                     });
                   }}
                 />
@@ -37,32 +59,42 @@ class Login extends Component {
                   type="password"
                   placeholder="비밀번호"
                   className="inputBox"
-                  id="inputPw"
+                  id="inputEmail"
                   onChange={e => {
                     this.setState({
-                      inputPw: e.target.value,
+                      password: e.target.value,
                     });
                   }}
                 />
               </div>
             </div>
             <div>
-              <Link to="/main-seong">
-                <button
-                  className={
-                    this.state.inputId.includes('@') &&
-                    this.state.inputPw.length >= 5
-                      ? 'loginBtnActive'
-                      : 'loginBtn'
-                  }
-                >
-                  로그인
-                </button>
-              </Link>
+              <button
+                className={
+                  this.state.email.includes('@') &&
+                  this.state.password.length >= 5
+                    ? 'loginBtnActive'
+                    : 'loginBtn'
+                }
+                disabled={
+                  this.state.email.includes('@') &&
+                  this.state.password.length >= 5
+                    ? false
+                    : true
+                }
+                onClick={this.loginfetch}
+              >
+                로그인
+              </button>
             </div>
           </article>
           <footer>
-            <a href="#">비밀번호를 잊으셨나요?</a>
+            <div>
+              <Link to="/signup-seong">가입하기</Link>
+            </div>
+            <div>
+              <a href="#">비밀번호를 잊으셨나요?</a>
+            </div>
           </footer>
         </div>
       </div>
@@ -70,4 +102,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

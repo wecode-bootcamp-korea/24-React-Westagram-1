@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
-import ArticleStory from '../../../components/seonghwanCho/ArticleStory';
-// import ArticleContent from './MainComponent/ArticleContent';
 import SidebarRecomUser from '../../../components/seonghwanCho/SidebarRecomUser';
-import AddCommentList from '../../../components/seonghwanCho/AddCommentList';
+import ArticleStory from '../../../components/seonghwanCho/ArticleStory';
+import Feed from '../../../components/seonghwanCho/Feed';
+import './Main.scss';
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      feedList: [],
       commentValue: '',
-      commentList: [],
     };
   }
 
@@ -20,16 +19,13 @@ class Main extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          commentList: data,
+          feedList: data,
         });
       });
   }
 
-  addCommentList = () => {
-    this.state.commentData.push(this.state.commentValue);
-  };
-
   render() {
+    const { feedList } = this.state;
     return (
       <div className="main">
         <Nav />
@@ -41,87 +37,19 @@ class Main extends Component {
                 <ArticleStory />
               </ul>
             </article>
-            <article>
-              <div className="articleProfile">
-                <span className="articleUserImage">
-                  <img
-                    src="/images/seonghwanCho/profile.jpeg"
-                    alt="wecode"
-                    id="articleProfileImage"
-                  />
-                </span>
-                <span>
-                  <div className="articleUserName">
-                    <strong>wecode_bootcamp</strong>
-                  </div>
-                  <div className="articleUserNameDiscription">
-                    WeCode-위코드
-                  </div>
-                </span>
-                <span className="articleViewMore">
-                  <i className="fas fa-ellipsis-h"></i>
-                </span>
-              </div>
-              <div>
-                <img
-                  src="/images/seonghwanCho/wecode24_1.jpg"
-                  alt="wecode"
-                  className="articleImage"
+            {feedList.map(feed => {
+              return (
+                <Feed
+                  key={feed.feedId}
+                  userName={feed.feedUserName}
+                  userImage={feed.feedUserImage}
+                  contentImage={feed.feedContentImage}
+                  like={feed.feedLike}
+                  bookMark={feed.feedBookMark}
+                  comment={feed.feedComment}
                 />
-              </div>
-              <div className="articleMenuBar">
-                <ul className="articleMenuList">
-                  <li>
-                    <i className="far fa-heart"></i>
-                  </li>
-                  <li>
-                    <i className="far fa-comment"></i>
-                  </li>
-                  <li>
-                    <i className="fas fa-location-arrow"></i>
-                  </li>
-                </ul>
-                <ul className="articleMenuList">
-                  <li>
-                    <i className="far fa-bookmark"></i>
-                  </li>
-                </ul>
-              </div>
-              <div className="likeBar">
-                <span>
-                  <img
-                    src="/images/seonghwanCho/profile.jpeg"
-                    alt="wecode"
-                    id="userLikebarImage"
-                  />
-                </span>
-                <span>
-                  <strong>seonghwan</strong>님 <strong>외 34명</strong>이
-                  좋아합니다
-                </span>
-              </div>
-              <div className="descriptionBar">
-                <div>
-                  <p>
-                    <span>wecode_bootcamp</span>"위코드는 단순 교육업체가 아닌
-                    개발자 커뮤니티입니다. Wecode에서 배우고 저는 총 5개
-                    회사에서 오퍼를 받았습니다." - Wecode 졸업생 강병진님...
-                  </p>
-                </div>
-                <div>20분 전</div>
-                <div className="commentWindow">
-                  <AddCommentList COMMENT_DATA={this.state.commentList} />
-                </div>
-                <div className="commentBar">
-                  <input
-                    type="text"
-                    placeholder="댓글 달기..."
-                    className="commentBarContent"
-                  />
-                  <button className="commentBarPostbtn">게시</button>
-                </div>
-              </div>
-            </article>
+              );
+            })}
           </div>
           <aside>
             <div className="sideBar">
@@ -149,10 +77,6 @@ class Main extends Component {
                     </a>
                   </span>
                 </div>
-                <SidebarRecomUser />
-                <SidebarRecomUser />
-                <SidebarRecomUser />
-                <SidebarRecomUser />
                 <SidebarRecomUser />
               </div>
               <div className="footerLink">

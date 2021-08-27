@@ -27,11 +27,11 @@
           margin-left: 10px;
           overflow: hidden;
 
-          & li {
+          li {
             margin: 10px;
             list-style: none;
 
-            & img {
+            img {
               width: 54px;
               border-radius: 36px;
             }
@@ -72,7 +72,7 @@
             font-size: 25px;
             list-style: none;
 
-            & li {
+            li {
               margin: 0px 10px;
             }
           }
@@ -96,15 +96,20 @@
           .commentBox {
             display: flex;
             justify-content: space-between;
+            margin: 3px;
 
             .commentId {
               margin-right: 10px;
               font-weight: 700;
+            }
 
-              .commentContent {
-                font-size: 15px;
-                overflow: hidden;
-              }
+            .commentContent {
+              font-size: 15px;
+              overflow: hidden;
+            }
+
+            .commentLikeBtnOn {
+              color: red;
             }
           }
 
@@ -164,7 +169,7 @@
             }
 
             .sideBarRecommenTopVm {
-              & a {
+              a {
                 font-size: 13px;
                 text-decoration: none;
                 color: black;
@@ -195,7 +200,7 @@
       }
 
       .footerLink {
-        & a {
+        a {
           text-decoration: none;
           font-size: 12px;
           color: #d0d0d0;
