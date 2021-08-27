@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './SignUp.scss';
 
 class SignUp extends Component {
@@ -7,7 +6,7 @@ class SignUp extends Component {
     return (
       <div className="signup-wrapper">
         <div className="signup-container">
-          <h2 className="logo">westagram </h2>
+          <h2 className="logo">westagram</h2>
           <form className="signUp-form">
             <input
               type="email"
@@ -40,7 +39,7 @@ class SignUp extends Component {
           </form>
         </div>
         <div className="login">
-          계정이 있으신가요 ?<Link to="/login-hyun"> 로그인</Link>
+          계정이 있으신가요 ?<a href="/login-hyun"> 로그인</a>
         </div>
       </div>
     );

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList/CommentList';
-import DogImg from '../../../assets/images/IMG_2625.jpg';
+import IconList from './IconList/IconList';
+import userImg from '../../../assets/images/IMG_2625.jpg';
+import feedImg from '../../../assets/images/feed.jpg';
 import './Main.scss';
 
 class Main extends Component {
   render() {
     return (
-        <div className="main-wrapper">
+      <div className="main-wrapper">
         {/*  nav  */}
         <nav>
           <a href="#" id="logo">
@@ -28,19 +30,19 @@ class Main extends Component {
           <ul className="right-icons">
             <li>
               <a href="#">
-                <span className="ir_pm">explore</span>
+                {/* <span className="ir_pm">explore</span> */}
                 <i className="far fa-compass icon"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                <span className="ir_pm">heart</span>
+                {/* <span className="ir_pm">heart</span> */}
                 <i className="far fa-heart icon"></i>
               </a>
             </li>
             <li>
               <a href="#">
-                <span className="ir_pm">profile</span>
+                {/* <span className="ir_pm">profile</span> */}
                 <i className="far fa-user icon"></i>
               </a>
             </li>
@@ -71,24 +73,7 @@ class Main extends Component {
               </div>
               {/* feeds content */}
               <div className="feeds__content">
-                <ul className="feeds-icons">
-                  <li>
-                    <i className="far fa-heart icon"></i>
-                    <span className="ir_pm">좋아요</span>
-                  </li>
-                  <li>
-                    <i className="far fa-comment icon"></i>
-                    <span className="ir_pm">댓글</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-location-arrow icon"></i>
-                    <span className="ir_pm">공유</span>
-                  </li>
-                  <li>
-                    <i className="far fa-bookmark icon"></i>
-                    <span className="ir_pm">북마크</span>
-                  </li>
-                </ul>
+                <IconList />
                 <div className="feeds__likes">
                   <div className="user-feeds__profile--img">
                     <img src={userImg} alt="피드사진" />
@@ -105,10 +90,7 @@ class Main extends Component {
                     <em>위코드에서 인스타그램 클론 코딩하는 중</em>
                     <button>더 보기</button>
                   </p>
-                  <CommentList
-                    data={this.state.commenetList}
-                    validation={this.state.validation}
-                  />
+                  <CommentList />
                 </div>
               </div>
               <form className="add-comment" onSubmit={this.handleClickbtn}>
@@ -118,14 +100,8 @@ class Main extends Component {
                   placeholder="댓글 달기..."
                   aria-label="댓글추가"
                   name="conent"
-                  // value={this.state.content}
-                  // onChange={this.handleInput}
                 />
-                <button
-                  type="submit"
-                  className="add-btn"
-                  // onClick={this.handleClickbtn}
-                >
+                <button type="submit" className="add-btn">
                   게시
                 </button>
               </form>

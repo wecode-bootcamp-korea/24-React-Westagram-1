@@ -7,36 +7,35 @@ class CommentList extends Component {
     super(props);
     this.state = {
       commentList: [],
-      commentValue: '',
     };
   }
   componentDidMount() {
-    fetch('http://localhost:3002/data/commentData_songhyun.json', {
+    fetch('http://localhost:3000/data/commentData_songhyun.json', {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(data =>
+      .then(comments =>
         this.setState({
-          commentList: data,
+          commentList: comments,
         })
       );
   }
   render() {
-    const { commentList, commentValue } = this.state;
+    const { commentList } = this.state;
 
     return (
-        <ul className="feeds-comment__list">
-          {commentList.map(comment => {
-            return (
-              <Comment
-                key={comment.id}
-                name={comment.userName}
-                profile={comment.profile}
-                comment={comment.content}
-              />
-            );
-          })}
-        </ul>
+      <ul className="feeds-comment__list">
+        {commentList.map(comment => {
+          return (
+            <Comment
+              key={comment.id}
+              name={comment.userName}
+              profile={comment.profile}
+              content={comment.content}
+            />
+          );
+        })}
+      </ul>
     );
   }
 }

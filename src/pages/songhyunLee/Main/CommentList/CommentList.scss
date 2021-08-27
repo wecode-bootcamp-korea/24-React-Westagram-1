@@ -6,14 +6,12 @@
 }
 
 .feeds-comment__list {
-  background-color: burlywood;
 
-  &__reply {
+  .feeds-comment__reply {
     display: flex;
     align-items: center;
     font-size: 12px;
     padding-bottom: 2px;
-    background-color: blue;
 
     b {
       margin-left: -3px;

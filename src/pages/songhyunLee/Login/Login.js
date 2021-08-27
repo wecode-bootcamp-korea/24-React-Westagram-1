@@ -7,16 +7,14 @@ class Login extends Component {
     this.state = {
       id: '',
       pwd: '',
-      validation: false,
     };
-
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput = event => {
+    const { name, value } = event.target;
+
     this.setState({
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
   };
 
@@ -24,24 +22,18 @@ class Login extends Component {
     event.preventDefault();
     this.handleValidate();
 
-    // back-end data
-    // await submitApi.post();
     this.setState({
       id: '',
       pwd: '',
     });
   };
 
-  // handleValidate, validation - 유효성 검사는 따로해서 상태 값을 변경.
-  handleValidate = () => {
-    const { id, pwd } = this.state;
-    this.setState({ validation: id.includes('@') && pwd.length >= 5 });
-  };
   render() {
+    const { id, pwd } = this.state;
     return (
       <div className="login">
         <div className="login-container">
-          <h2 className="westagram-logo">westagram </h2>
+          <h2 className="westagram-logo">westagram</h2>
           <form className="login-form" onSubmit={this.handleSubmit}>
             <input
               type="email"
@@ -65,7 +57,9 @@ class Login extends Component {
             <button
               type="submit"
               className={
-                this.state.validation ? 'login-btn--active' : 'login-btn'
+                id.includes('@') && pwd.length >= 5
+                  ? 'login-btn--active'
+                  : 'login-btn'
               }
             >
               로그인
