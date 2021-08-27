@@ -1,0 +1,81 @@
+.signup-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: sans-serif;
+
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 348px;
+    padding: 0 40px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    text-align: center;
+    background: #fff;
+
+    .logo {
+      line-height: 33px;
+      padding-left: 10px;
+      font-size: 45px;
+      font-family: "Lobster",
+        cursive;
+    }
+
+    .signUp-form {
+
+      margin-top: 20px;
+
+      .signUp-input,
+      .signUp-email,
+      .signUp-pwd {
+        width: 80%;
+        height: 38px;
+        margin-bottom: 10px;
+        padding: 0 20px;
+        border: 1px solid #dbdbdb;
+        border-radius: 3px;
+        font-size: 12px;
+        background: rgba(238, 238, 238, 0.534);
+      }
+
+      .signUp-btn {
+        width: 93%;
+        height: 36px;
+        margin-bottom: 10px;
+        padding: 0 20px;
+        background: #b2dffc;
+        border: 1px solid #b2dffc;
+      }
+    }
+  }
+
+  button {
+    height: 32px;
+    margin-top: 5px;
+    border-radius: 3px;
+    line-height: 32px;
+    background: #b2dffc;
+    color: #fff;
+  }
+
+  .login {
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+    padding: 0 5px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+
+    a {
+      color: #0f5086;
+    }
+  }
+}
