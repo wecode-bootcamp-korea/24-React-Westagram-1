@@ -17,9 +17,9 @@ class Main extends React.Component {
       method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
     }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
       .then(res => res.json())
-      .then(data => {
+      .then(feeddata => {
         this.setState({
-          feedArr: data,
+          feedArr: feeddata,
         });
       });
   }
@@ -31,16 +31,16 @@ class Main extends React.Component {
         <div>
           <Nav />
         </div>
-        <div id="main_background">
-          <div id="all">
-            <div id="dia"></div>
-            <div id="tri">
-              <h4 id="current_search">최근 검색 항목</h4>
+        <div className="main_background">
+          <div className="all">
+            <div className="dia"></div>
+            <div className="tri">
+              <h4 className="current_search">최근 검색 항목</h4>
               <div></div>
             </div>
           </div>
           <main>
-            <div id="container_1">
+            <div className="container_1">
               <Story />
               {feedArr.map(feed => {
                 return (

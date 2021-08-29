@@ -8,8 +8,7 @@ class MainCommet extends React.Component {
     this.state = {
       commentList: [],
       commentValue: '',
-      like: 'far fa-heart',
-      likeCounter: '좋아요 41개', //원래는 counter 처리 보여주기 위해서 이렇게 처리함
+      isLikeValue: true,
     };
   }
 
@@ -21,15 +20,13 @@ class MainCommet extends React.Component {
   };
 
   addLikeCount = () => {
-    if (this.state.like == 'far fa-heart') {
+    if (this.state.isLikeValue === true) {
       this.setState({
-        like: 'fas fa-heart',
-        likeCounter: '좋아요 42개',
+        isLikeValue: false,
       });
-    } else if (this.state.like == 'fas fa-heart') {
+    } else if (this.state.isLikeValue === false) {
       this.setState({
-        like: 'far fa-heart',
-        likeCounter: '좋아요 41개',
+        isLikeValue: true,
       });
     }
   };
@@ -55,12 +52,12 @@ class MainCommet extends React.Component {
   };
 
   render() {
-    const { commentList, commentValue, like, likeCounter } = this.state;
+    const { commentList, commentValue, isLikeValue, likeCounter } = this.state;
     const { profile, feeds, comments } = this.props;
     return (
       <>
-        <div id="self_main">
-          <div id="main_id">
+        <div className="self_main">
+          <div className="main_id">
             <div className="customer_id">
               <img
                 alt="my_photo_img"
@@ -69,16 +66,19 @@ class MainCommet extends React.Component {
               <div>k_seung_chan</div>
             </div>
             <div className="main_id_icon">
-              <i id="dot" className="fas fa-ellipsis-h"></i>
+              <i className="dots" className="fas fa-ellipsis-h"></i>
             </div>
           </div>
-          <div id="main_img">
+          <div className="main_img">
             <img alt="moong_gu" src="/images/seungchanKim/IMG_2625-1.jpg" />
           </div>
-          <div id="main_content">
-            <div id="many_icon">
+          <div className="main_content">
+            <div className="many_icon">
               <div className="icon">
-                <i className={like} onClick={this.addLikeCount}></i>
+                <i
+                  className={isLikeValue ? 'far fa-heart' : 'fas fa-heart'}
+                  onClick={this.addLikeCount}
+                ></i>
                 <i className="far fa-comment"></i>
                 <i className="far fa-paper-plane"></i>
               </div>
@@ -86,7 +86,9 @@ class MainCommet extends React.Component {
                 <i className="far fa-bookmark"></i>
               </div>
             </div>
-            <div className="like">{likeCounter}</div>
+            <div className="like">
+              {isLikeValue ? '좋아요 41개' : '좋아요 42개'}
+            </div>
             <div className="qa">
               <div className="kscname">{profile}</div>
               <div className="dogname">{feeds}</div>
@@ -109,18 +111,22 @@ class MainCommet extends React.Component {
                 </div>
               </div>
             </div>
-            <div id="watch">2시간 전</div>
+            <div className="watch">2시간 전</div>
           </div>
-          <form id="main_input" type="submit">
+          <form className="main_input" type="submit">
             <i className="far fa-smile"></i>
             <input
               type="text"
               placeholder="댓글 달기..."
-              id="main_input_1"
+              className="main_input_1"
               value={commentValue}
               onChange={this.getInputValue}
             />
-            <button type="submit" id="text_push" onClick={this.addComment}>
+            <button
+              type="submit"
+              className="text_push"
+              onClick={this.addComment}
+            >
               게시
             </button>
           </form>

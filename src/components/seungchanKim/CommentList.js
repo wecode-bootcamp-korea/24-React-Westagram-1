@@ -5,12 +5,12 @@ class CommentList extends Component {
     const { commentList, removeComment } = this.props;
     return (
       <>
-        {commentList.map(a => {
+        {commentList.map(({ id, userId, text }) => {
           return (
-            <div className="qa_layout_2" key={a.id}>
-              <span className="qa_name">{a.userId}</span>
-              <span className="qa_hello">{a.text}</span>
-              <div className="qa_remove" onClick={() => removeComment(a.id)}>
+            <div className="qa_layout_2" key={id}>
+              <span className="qa_name">{userId}</span>
+              <span className="qa_hello">{text}</span>
+              <div className="qa_remove" onClick={() => removeComment(id)}>
                 X
               </div>
             </div>

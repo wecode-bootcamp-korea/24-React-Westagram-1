@@ -8,12 +8,10 @@ class LoginMain extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      buttonChange: 'buttonEvent',
-      idFontSize: 'callNumber',
-      pwFontSize: 'placeHoldPw',
-      pwLook: 'pwLook',
-      type: 'password',
-      typeInfo: '비밀번호 표시',
+      buttonValue: true,
+      isTypeValue: true,
+      idFontSizeValue: true,
+      pwFontSizeValue: true,
     };
   }
 
@@ -37,42 +35,40 @@ class LoginMain extends React.Component {
       .catch(err => alert(err));
   };
 
-  pwClick = () => {
-    if (this.state.typeInfo === '비밀번호 표시') {
+  pwLookClick = () => {
+    if (this.state.isTypeValue === true) {
       this.setState({
-        typeInfo: '숨기기',
-        type: 'text',
+        isTypeValue: false,
       });
-    } else if (this.state.typeInfo === '숨기기') {
+    } else if (this.state.isTypeValue === false) {
       this.setState({
-        typeInfo: '비밀번호 표시',
-        type: 'password',
+        isTypeValue: true,
       });
     }
   };
 
-  fontSize = () => {
-    if (this.state.id.length > 0) {
+  idFontSize = () => {
+    const idLength = this.state.id.length > 0;
+    if (idLength > 0) {
       this.setState({
-        idFontSize: 'callNumberChange',
+        idFontSizeValue: false,
       });
     } else {
       this.setState({
-        idFontSize: 'callNumber',
+        idFontSizeValue: true,
       });
     }
   };
 
   pwFontSize = () => {
-    if (this.state.pw.length > 0) {
+    const pwLength = this.state.pw.length > 0;
+    if (pwLength) {
       this.setState({
-        pwFontSize: 'placeHoldPwChange',
-        pwLook: 'pwLookChange',
+        pwFontSizeValue: false,
       });
     } else {
       this.setState({
-        pwFontSize: 'placeHoldPw',
-        pwLook: 'pwLook',
+        pwFontSizeValue: true,
       });
     }
   };
@@ -96,11 +92,11 @@ class LoginMain extends React.Component {
       this.state.pw.length > 5
     ) {
       this.setState({
-        buttonChange: 'buttonEventChange',
+        buttonValue: false,
       });
     } else {
       this.setState({
-        buttonChange: 'buttonEvent',
+        buttonValue: true,
       });
     }
   };
@@ -109,28 +105,30 @@ class LoginMain extends React.Component {
     const {
       id,
       pw,
-      buttonChange,
-      idFontSize,
-      pwFontSize,
-      pwLook,
-      type,
-      typeInfo,
+      buttonValue,
+      isTypeValue,
+      idFontSizeValue,
+      pwFontSizeValue,
     } = this.state;
     return (
       <div className="login_main">
-        <div id="all_layout">
-          <h1 id="title">Westagram</h1>
-          <div id="login_input">
+        <div className="all_layout">
+          <h1 className="title">Westagram</h1>
+          <div className="login_input">
             <div id="customer_id" className="login_box_layout">
               <label for="cs_id">
                 <input
                   type="text"
-                  id="cs_id"
+                  className="cs_id"
                   value={id}
                   onChange={this.handleIdInput}
-                  onKeyUp={this.fontSize}
+                  onKeyUp={this.idFontSize}
                 />
-                <span className={this.state.idFontSize}>
+                <span
+                  className={
+                    idFontSizeValue ? 'callNumber' : 'callNumberChange'
+                  }
+                >
                   전화번호, 사용자 이름 또는 이메일
                 </span>
               </label>
@@ -142,16 +140,25 @@ class LoginMain extends React.Component {
             >
               <label for="cs_pw">
                 <input
-                  type={type}
-                  id="cs_pw"
+                  type={isTypeValue ? 'password' : 'text'}
+                  className="cs_pw"
                   value={pw}
                   onChange={this.handlePwInput}
                   onKeyUp={this.pwFontSize}
                 />
-                <span className={pwFontSize}>비밀번호</span>
+                <span
+                  className={
+                    pwFontSizeValue ? 'placeHoldPw' : 'placeHoldPwChange'
+                  }
+                >
+                  비밀번호
+                </span>
               </label>
-              <div className={pwLook} onClick={this.pwClick}>
-                {typeInfo}
+              <div
+                className={pwFontSizeValue ? 'pwLook' : 'pwLookChange'}
+                onClick={this.pwLookClick}
+              >
+                {isTypeValue ? '비밀번호 표시' : '숨기기'}
               </div>
             </div>
             <div
@@ -163,26 +170,26 @@ class LoginMain extends React.Component {
                 <input
                   type="button"
                   value="로그인"
-                  className={buttonChange}
+                  className={buttonValue ? 'buttonEvent' : 'buttonEventChange'}
                   onClick={this.handleLogin}
                 />
               </Link>
             </div>
             <div id="login_or" className="login_box_layout">
               <div className="or_line"></div>
-              <div id="or_text">또는</div>
+              <div className="or_text">또는</div>
               <div className="or_line"></div>
             </div>
             <div id="login_facebook" className="login_box_layout">
               <i className="fab fa-facebook-square"></i>
               <a href="#">Facebook으로 로그인</a>
             </div>
-            <div id="pw_forgot">
+            <div className="pw_forgot">
               <a href="#">비밀번호를 잊으셨나요?</a>
             </div>
           </div>
         </div>
-        <div id="no_id">
+        <div className="no_id">
           <span>계정이 없으신가요?</span>
           <a href="#">가입하기</a>
         </div>
